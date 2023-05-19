@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>手机app版b站的缓存视频文件在哪里找?</title>
+      <link href="/2023/05/19/%E6%89%8B%E6%9C%BAapp%E7%89%88b%E7%AB%99%E7%9A%84%E7%BC%93%E5%AD%98%E8%A7%86%E9%A2%91%E6%96%87%E4%BB%B6%E5%9C%A8%E5%93%AA%E9%87%8C%E6%89%BE/"/>
+      <url>/2023/05/19/%E6%89%8B%E6%9C%BAapp%E7%89%88b%E7%AB%99%E7%9A%84%E7%BC%93%E5%AD%98%E8%A7%86%E9%A2%91%E6%96%87%E4%BB%B6%E5%9C%A8%E5%93%AA%E9%87%8C%E6%89%BE/</url>
+      
+        <content type="html"><![CDATA[<p>首先手机存储不止一个Android，你要找的是Android，不是.Android。区别是前面有没有点，好了现在找到Android了，再进去data，进入data之后现在的安卓机都会有个访问限制，他会让你前往文件应用查看，但是没关系，点击前往查看就是了。进入之后再重复前面的操作也就是再进入Android (Android还是要注意前面有点和无点的区别，进没点的那个) ，再进入data，这个时候能访问了，一般直接划到最后，就是tv.danmaku.bili，再找到download。这里面就都是缓存的视频了，如果是合集的话，那一个id号文件夹里会有对应的多个视频文件夹，c 什么什么的，再进去第-个，就会有视频上最后的三个文件了，video是视频audio是音频，还有一个不知道是什么，我猜可能是弹幕? 我也不知道对不对，在之后找到video这个东西将他的后缀改成“.MP4”就可以查看视频啦！</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 解决办法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 解决办法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>《毛选二》</title>
       <link href="/2023/05/16/%E3%80%8A%E6%AF%9B%E9%80%89%E4%BA%8C%E3%80%8B/"/>
       <url>/2023/05/16/%E3%80%8A%E6%AF%9B%E9%80%89%E4%BA%8C%E3%80%8B/</url>
