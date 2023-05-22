@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>com.android.build.gradle.internal.tasks.CheckDuplicatesRunnable</title>
+      <link href="/2023/05/22/com-android-build-gradle-internal-tasks-CheckDuplicatesRunnable/"/>
+      <url>/2023/05/22/com-android-build-gradle-internal-tasks-CheckDuplicatesRunnable/</url>
+      
+        <content type="html"><![CDATA[<p>Android supportv4 和 Androidx包的资源重复，在<a href="https://so.csdn.net/so/search?q=gradle&spm=1001.2101.3001.7020">gradle</a>.properties中加入配置：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">android.useAndroidX=true</span><br><span class="line">android.enableJetifier=true</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 解决办法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 解决办法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>手机app版b站的缓存视频文件在哪里找?</title>
       <link href="/2023/05/19/%E6%89%8B%E6%9C%BAapp%E7%89%88b%E7%AB%99%E7%9A%84%E7%BC%93%E5%AD%98%E8%A7%86%E9%A2%91%E6%96%87%E4%BB%B6%E5%9C%A8%E5%93%AA%E9%87%8C%E6%89%BE/"/>
       <url>/2023/05/19/%E6%89%8B%E6%9C%BAapp%E7%89%88b%E7%AB%99%E7%9A%84%E7%BC%93%E5%AD%98%E8%A7%86%E9%A2%91%E6%96%87%E4%BB%B6%E5%9C%A8%E5%93%AA%E9%87%8C%E6%89%BE/</url>
