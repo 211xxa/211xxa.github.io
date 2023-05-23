@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Android Studio 总是报错 Unresolved Class ‘MainActivity‘ 的解决办法</title>
+      <link href="/2023/05/23/Android-Studio-%E6%80%BB%E6%98%AF%E6%8A%A5%E9%94%99-Unresolved-Class-%E2%80%98MainActivity%E2%80%98-%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
+      <url>/2023/05/23/Android-Studio-%E6%80%BB%E6%98%AF%E6%8A%A5%E9%94%99-Unresolved-Class-%E2%80%98MainActivity%E2%80%98-%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>   AndroidManifest.<a href="https://so.csdn.net/so/search?q=xml&spm=1001.2101.3001.7020">xml</a>、 MainActivity 类对应的源文件 MainActivity.java 或 MainActivity.kt 开头处加上修改文件名后的完整包名，项目中引用该包下的资源或文件可能均需修改引用的url。</p><p>在 MainActivity 类对应的源文件 MainActivity.java 或 MainActivity.kt 开头，不要漏掉 package 语句</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 解决办法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 解决办法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>com.android.build.gradle.internal.tasks.CheckDuplicatesRunnable</title>
       <link href="/2023/05/22/com-android-build-gradle-internal-tasks-CheckDuplicatesRunnable/"/>
       <url>/2023/05/22/com-android-build-gradle-internal-tasks-CheckDuplicatesRunnable/</url>
