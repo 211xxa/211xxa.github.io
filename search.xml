@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>解决 bash: hexo: command not found</title>
+      <link href="/2023/06/01/%E8%A7%A3%E5%86%B3-bash-hexo-command-not-found/"/>
+      <url>/2023/06/01/%E8%A7%A3%E5%86%B3-bash-hexo-command-not-found/</url>
+      
+        <content type="html"><![CDATA[<p>先检查 nodejs 和 npm 是否正常，依次输入命令 <code>node -v</code> 和 <code>npm -v</code> 看看是否有相关版本信息</p><p>出现了版本信息就证明 nodejs 和 npm 是没有问题的，那么就应该是环境变量的配置问题了，在【此电脑】右键【属性】，依次选择【高级系统设置】-【环境变量】，选择系统变量 Path，将 <code>node_modules</code> 下的 <code>.bin</code> 文件路径添加到 Path 里面</p><p>环境变量添加好了之后重新打开 git 即可运行 hexo 命令，如果此时仍然无法执行 hexo 命令，那就只能拿出终极绝招了，运行命令 <code>npm install hexo-cli -g</code> 重新安装 hexo 即可！</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 解决办法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 解决办法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>美剧</title>
       <link href="/2023/05/23/%E7%BE%8E%E5%89%A7/"/>
       <url>/2023/05/23/%E7%BE%8E%E5%89%A7/</url>
