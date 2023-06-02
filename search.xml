@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>在博客插入B站视频外链</title>
+      <link href="/2023/06/02/%E5%9C%A8%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5B%E7%AB%99%E8%A7%86%E9%A2%91%E5%A4%96%E9%93%BE/"/>
+      <url>/2023/06/02/%E5%9C%A8%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5B%E7%AB%99%E8%A7%86%E9%A2%91%E5%A4%96%E9%93%BE/</url>
+      
+        <content type="html"><![CDATA[<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe src="https://www.bilibili.com/video/BV1Cb411677C?p=1&vd_source=e72451aecdc49246888de18774c868c8" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>笔记本电脑选购指南</title>
       <link href="/2023/06/01/%E7%AC%94%E8%AE%B0%E6%9C%AC%E7%94%B5%E8%84%91%E9%80%89%E8%B4%AD%E6%8C%87%E5%8D%97/"/>
       <url>/2023/06/01/%E7%AC%94%E8%AE%B0%E6%9C%AC%E7%94%B5%E8%84%91%E9%80%89%E8%B4%AD%E6%8C%87%E5%8D%97/</url>
@@ -374,6 +399,18 @@
         <content type="html"><![CDATA[<p>使用 Hexo 写博客可以让你更加专注于内容创作，而不必过多关注博客网站的技术细节和设计问题。以下是使用 Hexo 写博客的基本步骤：</p><p>1、安装 Hexo：访问 Hexo 官方网站，根据官方文档的指引，安装 Node.js 以及 Hexo。</p><p>2、初始化 Hexo：使用命令行工具进入你想要存储 Hexo 博客的目录，运行 <code>hexo init</code> 和 <code>npm init</code> 命令，这将会初始化一个 Hexo 博客，并创建必要的文件和文件夹。</p><p>3、配置 Hexo：在项目根目录下的 _config.yml 文件中配置博客的基本信息，例如博客标题、描述、作者、主题等等。</p><p>4、创建新文章：运行 <code>hexo new &lt;文章标题&gt;</code> 命令来创建一篇新的博客文章。创建完成后，会在 source&#x2F;_posts&#x2F; 文件夹中生成一个以文章标题命名的 Markdown 文档。</p><p>5、编辑文章内容：使用 Markdown 语法，将你的文章内容填充到所创建的 Markdown 文档中。</p><p>6、发布文章：使用 <code>hexo clean</code> 和 <code>hexo generate</code> 命令来生成静态网站，并使用 <code>hexo deploy</code> 命令将静态网站上传到云服务器或者部署到 GitHub Pages 上。</p><p>关于具体格式，配置和编写 Markdown 格式的 Hexo 文章，包括文章标题、发布日期、标签、分类等信息，可以在你的 Markdown 文件中添加 front matter 部分。一个典型的 front matter 如下：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hello, Hexo!</span><br><span class="line">date: 2023-04-05 12:00:00</span><br><span class="line">tags:</span><br><span class="line">- hexo</span><br><span class="line">- blog</span><br><span class="line">categories:</span><br><span class="line">- Tutorial</span><br><span class="line">---</span><br></pre></td></tr></table></figure><p>这里，我们指定了文章的标题、时间戳，博客的标签和分类，这些信息将会被 Hexo 用来生成站点的网页，并按照你所设定的标准排序。在此之后，你可以把你想要在正文中呈现的任何内容按照 Markdown 语法写成文章正文。</p><p>总之，通过使用 Hexo 提供的构建工具和 Markdown 语法生成你的博客，可以方便的展示你的博客内容，并在各种平台上进行宣传推广。</p><p><img src="/../%E4%B8%AD%E5%9B%BD%E5%9C%B0%E5%9B%BE.JPG" alt="测试"></p><p><img src="/../Hexo.PNG"></p>]]></content>
       
       
+      <categories>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
       
     </entry>
     
