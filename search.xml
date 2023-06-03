@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>MySQL修改密码的四种方法</title>
+      <link href="/2023/06/03/MySQL%E4%BF%AE%E6%94%B9%E5%AF%86%E7%A0%81%E7%9A%84%E5%9B%9B%E7%A7%8D%E6%96%B9%E6%B3%95/"/>
+      <url>/2023/06/03/MySQL%E4%BF%AE%E6%94%B9%E5%AF%86%E7%A0%81%E7%9A%84%E5%9B%9B%E7%A7%8D%E6%96%B9%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<h1 id="方法1：用set-password命令"><a href="#方法1：用set-password命令" class="headerlink" title="方法1：用set password命令"></a>方法1：用set password命令</h1><p><strong>（1）首先要先登录MySQL：</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure><p><strong>（2）修改密码格式为：</strong></p><p>set password for 用户名@localhost &#x3D; password(‘新密码’); <strong>一定不要忘记最后面的分号，</strong>例如：我们把密码改成成123：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set password for root@localhost = password(&#x27;123&#x27;);</span><br></pre></td></tr></table></figure><h1 id="方法2：用mysqladmin"><a href="#方法2：用mysqladmin" class="headerlink" title="方法2：用mysqladmin"></a>方法2：用mysqladmin</h1><p><strong>利用mysqladmin，我们不需要先登录</strong>，但是需要直到原来的密码；我们可以直接修改，修改密码格式为：</p><p>mysqladmin -u用户名 -p旧密码 password 新密码，注意，password前面没有 - ，例如：我们再把密码改成123456：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqladmin -uroot -p123 password 123456</span><br></pre></td></tr></table></figure><h1 id="方法3：用update直接编辑user表"><a href="#方法3：用update直接编辑user表" class="headerlink" title="方法3：用update直接编辑user表"></a>方法3：用update直接编辑user表</h1><p><strong>（1）首先要先登录MySQL</strong></p><p><strong>（2）然后依次输入：</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">use mysql # 连接权限数据库</span><br><span class="line">update user set password=password(&#x27;521&#x27;) where user=&#x27;root&#x27; and host=&#x27;localhost&#x27;; # 改密码</span><br><span class="line">flush privileges; # 刷新权限</span><br></pre></td></tr></table></figure><h1 id="方法4：忘记密码处理方式"><a href="#方法4：忘记密码处理方式" class="headerlink" title="方法4：忘记密码处理方式"></a>方法4：忘记密码处理方式</h1><ol><li>关闭正在运行的MySQL服务。</li></ol><p>win+r输入：services.msc回车，找到MySQL,手动关闭MySQL服务</p><ol start="2"><li>打开DOS窗口，利用cd命令转到mysql的bin目录：建议直接找到mysql的bin目录下输入cmd回车</li><li>输入mysqld –skip-grant-tables 回车。</li></ol><p>–skip-grant-tables 的意思是<strong>启动MySQL服务的时候跳过权限表认证</strong>。 </p><ol start="4"><li>再开一个DOS窗口（刚才那个DOS窗口已经不能动了），转到mysql的bin目录。 </li><li>输入mysql回车，如果上面修改成功，将直接出现 mysql&gt; 这样的提示符。 </li><li>连接权限数据库： use mysql</li><li>改密码：update user set password&#x3D;password(“123”) where user&#x3D;”root”;</li><li>刷新权限（必须步骤）：flush privileges; (不要忘记分号)<br>8.exit或者ctrl+c退出，进行重新登陆</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> MySQL </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MySQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>在博客插入B站视频外链</title>
       <link href="/2023/06/02/%E5%9C%A8%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5B%E7%AB%99%E8%A7%86%E9%A2%91%E5%A4%96%E9%93%BE/"/>
       <url>/2023/06/02/%E5%9C%A8%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5B%E7%AB%99%E8%A7%86%E9%A2%91%E5%A4%96%E9%93%BE/</url>
