@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>IDEA设置背景为自定义照片</title>
+      <link href="/2023/06/04/IDEA%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF%E4%B8%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E7%85%A7%E7%89%87/"/>
+      <url>/2023/06/04/IDEA%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF%E4%B8%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E7%85%A7%E7%89%87/</url>
+      
+        <content type="html"><![CDATA[<h2 id="快捷操作"><a href="#快捷操作" class="headerlink" title="快捷操作"></a>快捷操作</h2><p>按下快捷键：Ctrl+Shift+A 这个快捷键可以打开全局搜索，按下后弹出全局搜索窗口</p><p>输入set，选择set background images</p><p>然后选择自己所要设置的背景图就好啦</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> IDEA </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IDEA </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>IDEA连接mysql</title>
       <link href="/2023/06/04/IDEA%E8%BF%9E%E6%8E%A5mysql/"/>
       <url>/2023/06/04/IDEA%E8%BF%9E%E6%8E%A5mysql/</url>
