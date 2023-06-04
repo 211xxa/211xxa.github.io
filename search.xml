@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>IDEA连接mysql</title>
+      <link href="/2023/06/04/IDEA%E8%BF%9E%E6%8E%A5mysql/"/>
+      <url>/2023/06/04/IDEA%E8%BF%9E%E6%8E%A5mysql/</url>
+      
+        <content type="html"><![CDATA[<h1 id="IDEA-连接-数据库"><a href="#IDEA-连接-数据库" class="headerlink" title="IDEA 连接 数据库"></a>IDEA 连接 数据库</h1><h2 id="一、首先确保数据库服务是打开的"><a href="#一、首先确保数据库服务是打开的" class="headerlink" title="一、首先确保数据库服务是打开的"></a>一、首先确保数据库服务是打开的</h2><p><img src="https://img-blog.csdnimg.cn/768b7c471466481db53ccbfe6f0a5853.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAVHJ5TXlCZXN0VG8=,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center"></p><p>使用 mysql -u root -p 连接数据库服务器。<br>若不能进入到 mysql 里面则说明 没有启动服务器，使用 net start mysql 命令启动。<br>如果 net start mysql 也无法启动，就需要 安置 MySQL：<br>以管理员身份运行 cmd，转到 mysql 的 bin 目录下，使用命令： mysqld -install 安置 MySQL，然后再次连接数据库。<br>直到出现 mysql&gt; 标志，才说明成功打开服务器。</p><h2 id="二、在-idea-中-连接-mysql"><a href="#二、在-idea-中-连接-mysql" class="headerlink" title="二、在 idea 中 连接 mysql"></a>二、在 idea 中 连接 mysql</h2><h3 id="1、找到-idea-中-MySQL-数据库的连接方式。"><a href="#1、找到-idea-中-MySQL-数据库的连接方式。" class="headerlink" title="1、找到 idea 中 MySQL 数据库的连接方式。"></a>1、找到 idea 中 MySQL 数据库的连接方式。</h3><p>第一步，找到 Database<br>第二步，点击”+”<br>第三步，点击 Data Source<br>第四步，点击 MySQL</p><p><img src="https://img-blog.csdnimg.cn/b34f83237ecb43129844165e79c80e4f.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAVHJ5TXlCZXN0VG8=,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center"></p><p>2、配置连接。<br>在 第一次使用 的时候，除了要配置连接，还要配置相应的驱动，否则连接的时候会报错！！！<br>图中的①②③④⑤分别表示为：<br>①、连接的名称<br>②、连接的数据库地址和端口号（连接本地的数据库就默认为localhost，端口号为3306）<br>③、MySQL数据库的用户名和密码<br>④、需要连接的数据库名称<br>⑤、配置完成之后，点击测试连接，查看是否连接成功</p><p><img src="https://img-blog.csdnimg.cn/91188f1975884034b6fc19a36775b77f.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAVHJ5TXlCZXN0VG8=,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center"></p><p>配置驱动：</p><p><img src="https://img-blog.csdnimg.cn/6652807ad8e84de8a70fd2edba0637f9.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAVHJ5TXlCZXN0VG8=,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center"></p><p>回到 Date Sources，出现<strong>绿色的小勾</strong>，即表示连接成功，然后点击OK，结束配置。</p><p><img src="https://img-blog.csdnimg.cn/bbd5527d8cd940eeb78216b78c1d5977.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAVHJ5TXlCZXN0VG8=,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center"></p><p>最后点击Database，即可出现刚刚新建的连接。</p><p><img src="https://img-blog.csdnimg.cn/87fb6e1c9d5b43d09233ffcba4ad302e.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAVHJ5TXlCZXN0VG8=,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center"></p><p>接下里就可以去编写 mysql 命令了</p><p><img src="https://img-blog.csdnimg.cn/3fb03c281b20406fa4a72e4b7aee3d09.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAVHJ5TXlCZXN0VG8=,size_14,color_FFFFFF,t_70,g_se,x_16#pic_center"></p><p><img src="https://img-blog.csdnimg.cn/f759115b17e948f2b6b437df5beda380.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAVHJ5TXlCZXN0VG8=,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center"></p><p>具体内容出自<a href="https://blog.csdn.net/TryMyBestToDo_/article/details/123465952?ops_request_misc=%7B%22request_id%22:%22168588156716800180684264%22,%22scm%22:%2220140713.130102334..%22%7D&request_id=168588156716800180684264&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_click~default-5-123465952-null-null.142%5Ev88%5Econtrol_2,239%5Ev2%5Einsert_chatgpt&utm_term=idea%E9%93%BE%E6%8E%A5mysql&spm=1018.2226.3001.4187">(46条消息) IDEA 连接 数据库_idea连接数据库_TryMyBestTo的博客-CSDN博客</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> MySQL </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MySQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Coodesker(纯净桌面图标整理)v1.0.4.1</title>
       <link href="/2023/06/03/Coodesker-%E7%BA%AF%E5%87%80%E6%A1%8C%E9%9D%A2%E5%9B%BE%E6%A0%87%E6%95%B4%E7%90%86-v1-0-4-1/"/>
       <url>/2023/06/03/Coodesker-%E7%BA%AF%E5%87%80%E6%A1%8C%E9%9D%A2%E5%9B%BE%E6%A0%87%E6%95%B4%E7%90%86-v1-0-4-1/</url>
