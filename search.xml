@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Gitee如何下载单个文件</title>
+      <link href="/2023/06/06/Gitee%E5%A6%82%E4%BD%95%E4%B8%8B%E8%BD%BD%E5%8D%95%E4%B8%AA%E6%96%87%E4%BB%B6/"/>
+      <url>/2023/06/06/Gitee%E5%A6%82%E4%BD%95%E4%B8%8B%E8%BD%BD%E5%8D%95%E4%B8%AA%E6%96%87%E4%BB%B6/</url>
+      
+        <content type="html"><![CDATA[<p>不知使用gitee的你，有没有遇到过需要下载某个仓库文件的情况？</p><p>点击下载，你会发现gitee开始给你打包整个仓库文件，一个几百m的仓库怎么说也要几分钟才能下完。可是，<strong>我只是需要某一个主题或者插件</strong>，gitee却不能单文件或者单文件夹下载，这个时候又要怎么弄呢？</p><h1 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h1><p>解决这个问题的方法非常简单！</p><p>只需要用chome或者<strong>新版edge浏览器</strong>，就能使用一个插件，来解决这个难题！</p><p>我们可以在edge设置里面打开扩展商店，搜索<code>GITEE</code></p><p><img src="https://img-blog.csdnimg.cn/img_convert/a4b4f485f5e6b31513d1e9fdcafe2fa1.png"></p><p>可以看到，每个文件之后出现了单独的下载图标，点击它即可下载单个文件了</p><p><img src="https://img-blog.csdnimg.cn/img_convert/8dc42644d9c8270f77023ebbf91de69c.png"></p><p>若有其他方法可自行网上查找进行实践</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Gitee </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Gitee </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>类HelloWorld是公共的, 应在名为 HelloWorld.java 的文件中声明 问题所在</title>
       <link href="/2023/06/05/%E7%B1%BBHelloWorld%E6%98%AF%E5%85%AC%E5%85%B1%E7%9A%84-%E5%BA%94%E5%9C%A8%E5%90%8D%E4%B8%BA-HelloWorld-java-%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%AD%E5%A3%B0%E6%98%8E-%E9%97%AE%E9%A2%98%E6%89%80%E5%9C%A8/"/>
       <url>/2023/06/05/%E7%B1%BBHelloWorld%E6%98%AF%E5%85%AC%E5%85%B1%E7%9A%84-%E5%BA%94%E5%9C%A8%E5%90%8D%E4%B8%BA-HelloWorld-java-%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%AD%E5%A3%B0%E6%98%8E-%E9%97%AE%E9%A2%98%E6%89%80%E5%9C%A8/</url>
