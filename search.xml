@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>从github下载单个文件</title>
+      <link href="/2023/06/06/%E4%BB%8Egithub%E4%B8%8B%E8%BD%BD%E5%8D%95%E4%B8%AA%E6%96%87%E4%BB%B6/"/>
+      <url>/2023/06/06/%E4%BB%8Egithub%E4%B8%8B%E8%BD%BD%E5%8D%95%E4%B8%AA%E6%96%87%E4%BB%B6/</url>
+      
+        <content type="html"><![CDATA[<p>问题描述：<br>github是一个很好的共享代码管理仓库，我们可以从github上直接以压缩包的形式直接download整个项目，也可以通过git,用git clone + URL 命令下载整个目录。<br>但是，有时候项目很大，而我们需要的只是项目中的单个文件夹（例如我想要下载项目中的decorder文件）。我们可以借助TortoiseSVN来完成</p><p><img src="https://img-blog.csdnimg.cn/img_convert/f1eef4dfde459d0bd2c503ae301e0d63.png"></p><p>TortoiseSVN 的下载与安装<br>TortoiseSVN 是 Subversion 版本控制系统的一个免费开源客户端，可以超越时间的管理文件和目录。文件保存在中央版本库，除了能记住文件和目录的每次修改以外，版本库非常像普通的文件服务器。你可以将文件恢复到过去的版本，并且可以通过检查历史知道数据做了哪些修改，谁做的修改。这就是为什么许多人将 Subversion 和版本控制系统看作一种”时间机器”。</p><p><strong>1.点击打开链接</strong><br><a href="https://tortoisesvn.net/downloads.html">TortoiseSVN下载地址</a><br><strong>2.根据系统位数选择相应客户端进行安装（在这里我选择64位）。</strong><br><img src="https://img-blog.csdnimg.cn/img_convert/bcc6cdba1e4bb62538d14a6300045d1a.png" alt="img"></p><p><strong>3.解压安装包，双击运行</strong><br><strong>4.点击next()</strong><br><img src="https://img-blog.csdnimg.cn/img_convert/0a185246eb1e76517e04ee7967317616.png" alt="img"></p><p><img src="https://img-blog.csdnimg.cn/img_convert/7dfcb17ddd212656cb7ffd504fff1174.png"></p><p><strong>5.确定你的安装路径</strong><br><img src="https://img-blog.csdnimg.cn/img_convert/2decd22b52cafae7831bf436e944c22d.png" alt="img"></p><p><strong>6.如果你喜欢用命令行操作，请务必记得勾选command line client tool为will be install on local hard driver,不用命令行的跳过这一步。</strong><br><img src="https://img-blog.csdnimg.cn/img_convert/22f6de0d7c8e6b22e8c9f83d0faa597c.png" alt="img"></p><p><strong>7.点击finish</strong><br><img src="https://img-blog.csdnimg.cn/img_convert/476b45c66d624bdf5effbaa197c566e0.png" alt="img"></p><p><strong>8.安装完毕后，在任意地方右键查看快捷菜单。发现TortoiseSVN即表示安装成功。<br>如果勾选了安装命令行工具，那么输入命令SVN，有如下提示也表示安装成功</strong><br><img src="https://img-blog.csdnimg.cn/img_convert/86c38998261ff3831c70ad1935613149.png" alt="img"></p><p><img src="https://img-blog.csdnimg.cn/img_convert/f9daf4c0cbaf8ede03716b8c45c7c06f.png"></p><h3 id="使用TortoiseSVN-从github下载单个文件"><a href="#使用TortoiseSVN-从github下载单个文件" class="headerlink" title="使用TortoiseSVN 从github下载单个文件"></a>使用TortoiseSVN 从github下载单个文件</h3><p><strong>1.在任意文件夹中鼠标点击右键，点击SVN checkout</strong><br><img src="https://img-blog.csdnimg.cn/img_convert/5b172ed8a18fee8b02cf78cbcc053b53.png" alt="img"></p><p><img src="https://img-blog.csdnimg.cn/img_convert/a7d2e69c618dbab77a22f25d7798922c.png"></p><p><strong>2.从github上复制整个项目的URL(注意:use http)</strong><br><img src="https://img-blog.csdnimg.cn/img_convert/e67e6af08905305de506380510002f69.png" alt="img"></p><p><strong>3.将URL复制到URL of repository中，并在后面添加&#x2F;trunk&#x2F;+你想要的下载文件夹的名称(Checkout dirctory自动填充为当前路径),点击ok</strong><br><img src="https://img-blog.csdnimg.cn/img_convert/b269e1eeb4c7e0f834d62f54e927be4a.png" alt="img"></p><p><strong>4.等待下载完成点击ok</strong><br><img src="https://img-blog.csdnimg.cn/img_convert/2ec4b0c12d8abfa65d35045abf39a5bb.png" alt="img"></p><p><img src="https://img-blog.csdnimg.cn/img_convert/d3b8be0a257ceae35d929a64d5de3b87.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> GitHub </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> GitHub </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Gitee如何下载单个文件</title>
       <link href="/2023/06/06/Gitee%E5%A6%82%E4%BD%95%E4%B8%8B%E8%BD%BD%E5%8D%95%E4%B8%AA%E6%96%87%E4%BB%B6/"/>
       <url>/2023/06/06/Gitee%E5%A6%82%E4%BD%95%E4%B8%8B%E8%BD%BD%E5%8D%95%E4%B8%AA%E6%96%87%E4%BB%B6/</url>
