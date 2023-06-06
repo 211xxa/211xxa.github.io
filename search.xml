@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>IDEA中配置Python环境并运行</title>
+      <link href="/2023/06/06/IDEA%E4%B8%AD%E9%85%8D%E7%BD%AEPython%E7%8E%AF%E5%A2%83%E5%B9%B6%E8%BF%90%E8%A1%8C/"/>
+      <url>/2023/06/06/IDEA%E4%B8%AD%E9%85%8D%E7%BD%AEPython%E7%8E%AF%E5%A2%83%E5%B9%B6%E8%BF%90%E8%A1%8C/</url>
+      
+        <content type="html"><![CDATA[<h4 id="1-前言"><a href="#1-前言" class="headerlink" title="1 前言"></a>1 前言</h4><p>mac 一般自带 python环境 ，在终端中 输入python就会有相关环境信息<br><img src="https://img-blog.csdnimg.cn/43061ec020f2466c8eeb3947e1e547e7.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5pep6LW355qE5bm06L275Lq6,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><p>Window 平台上安装 Python 的简单步骤如下</p><ul><li><p>打开 WEB 浏览器访问<a href="https://www.python.org/downloads/windows/">https://www.python.org/downloads/windows/</a><br><img src="https://img-blog.csdnimg.cn/c7f6e821365c4f468d54767344446a23.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5pep6LW355qE5bm06L275Lq6,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p></li><li><p>选择其中的一个版本下载，下载后，双击下载包，进入 Python 安装向导，安装非常简单，你只需要使用默认的设置一直点击”下一步”直到安装完成即可</p></li></ul><h4 id="2-IDEA-中安-Python-插件"><a href="#2-IDEA-中安-Python-插件" class="headerlink" title="2 IDEA 中安 Python 插件"></a>2 IDEA 中安 Python 插件</h4><p>在IDEA中安装Python Plugins（ Idea缺省是没有安装Python的，需要在plugins里安装）具体操作如下图：<br><img src="https://img-blog.csdnimg.cn/30c707ab791c4816b1fd160881bde55f.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5pep6LW355qE5bm06L275Lq6,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><p>install之后，重新启动IDEA</p><h4 id="3-创建python工程"><a href="#3-创建python工程" class="headerlink" title="3 创建python工程"></a>3 创建python工程</h4><p>在IDEA里，选择file -&gt; new project</p><p>对于 windos 环境，若已经下载好python.exe,idea会自动识别，然后一直点击next ，最后设置项目名，finish</p><p>对于 mac 环境</p><p><img src="https://img-blog.csdnimg.cn/7c6c9eca8570450da3b59eff9c263ca9.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5pep6LW355qE5bm06L275Lq6,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><p><img src="https://img-blog.csdnimg.cn/3c7220f548864d9c8ad3a894b0327ca0.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5pep6LW355qE5bm06L275Lq6,size_20,color_FFFFFF,t_70,g_se,x_16"></p><ul><li>Django：是用Python开发的一个免费开源的Web框架，可以用于快速搭建高性能，优雅的网站</li><li>Google App Engine: 是一种让您可以在 Google 的基础架构上运行您的网络应用程序</li><li>SQL Support: 是支持SQL的框架</li></ul><h4 id="4-创建-python-文件并运行"><a href="#4-创建-python-文件并运行" class="headerlink" title="4 创建 python 文件并运行"></a>4 创建 python 文件并运行</h4><p>在项目名称上点击右键创建 python 文件<br><img src="https://img-blog.csdnimg.cn/bbc99f975fec42c6bef728e6420ad8e3.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5pep6LW355qE5bm06L275Lq6,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><p>在创建好的文件中输入</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">m = 20</span><br><span class="line">n = 20</span><br><span class="line">print(&quot;m+n=&quot;, n + m)</span><br></pre></td></tr></table></figure><p>然后在文件上点击右键运行<br><img src="https://img-blog.csdnimg.cn/48ee1d8edc0b4b2e84f076ab84d2d69a.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5pep6LW355qE5bm06L275Lq6,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><p><img src="https://img-blog.csdnimg.cn/9549ea8f3d6141e28322570c15ffae7d.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5pep6LW355qE5bm06L275Lq6,size_20,color_FFFFFF,t_70,g_se,x_16"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> IDEA </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IDEA </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>基于vscode的vue开发</title>
       <link href="/2023/06/06/%E5%9F%BA%E4%BA%8Evscode%E7%9A%84vue%E5%BC%80%E5%8F%91/"/>
       <url>/2023/06/06/%E5%9F%BA%E4%BA%8Evscode%E7%9A%84vue%E5%BC%80%E5%8F%91/</url>
