@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>IDEA运行Vue项目</title>
+      <link href="/2023/06/06/IDEA%E8%BF%90%E8%A1%8CVue%E9%A1%B9%E7%9B%AE/"/>
+      <url>/2023/06/06/IDEA%E8%BF%90%E8%A1%8CVue%E9%A1%B9%E7%9B%AE/</url>
+      
+        <content type="html"><![CDATA[<h3 id="一、vue的安装配置"><a href="#一、vue的安装配置" class="headerlink" title="一、vue的安装配置"></a>一、vue的安装配置</h3><p>1、idea中<a href="https://so.csdn.net/so/search?q=%E5%AE%89%E8%A3%85vue&spm=1001.2101.3001.7020">安装vue</a>.js 点击File–&gt;Settings–&gt;Plugins–&gt;搜索vue.js插件，下面的图中我已经安装好了</p><p><img src="https://img-blog.csdnimg.cn/20210304154839840.png" alt="在这里插入图片描述"></p><p><img src="https://img-blog.csdnimg.cn/20210304155049359.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h4eTEyMzRnZ2c=,size_16,color_FFFFFF,t_70"></p><p>2、到<a href="https://so.csdn.net/so/search?q=node&spm=1001.2101.3001.7020">node</a>官网下载<a href="https://so.csdn.net/so/search?q=%E5%AE%89%E8%A3%85node&spm=1001.2101.3001.7020">安装node</a>.js <a href="https://nodejs.org/zh-cn/">官方下载链接</a>.</p><p> node.js 安装过程 傻瓜式安装，直接下一步就可以了</p><p>3、配置node.js 环境<br>打开<a href="https://so.csdn.net/so/search?q=cmd&spm=1001.2101.3001.7020">cmd</a>命令窗口 输入</p><p>**node -v **</p><p><strong>npm -v</strong> 查看版本<img src="https://img-blog.csdnimg.cn/0ffb41359cba492e81cdffe048167139.png" alt="img"></p><p>node.js 安装路径D:\Program Files\nodejs (我不小心装到C盘了，好吧就这样，懒得改了)</p><p>npm config set prefix “D:\Program Files\nodejs\node_global”<br>npm config set cache “D:\Program Files\nodejs\node_cache”<br>在cmd 运行两个命令<br><img src="https://img-blog.csdnimg.cn/26804f1dc7ea4d95ba5b64cb3fa4f331.png"></p><p>这里的环境配置主要配置的是npm安装的全局模块所在的路径，以及缓存cache的路径，之所以要配置，是因为以后在执行类似：npm install express [-g] （后面的可选参数-g，g代表global全局安装的意思）的安装语句时，会将安装的模块安装到【C:\Users\用户名\AppData\Roaming\npm】路径中，占C盘空间。</p><p>4、配置环境<br>关闭cmd窗口，“我的电脑”-右键-“属性”-“高级系统设置”-“高级”-“环境变量”-“新建”<img src="https://img-blog.csdnimg.cn/20210304164452191.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h4eTEyMzRnZ2c=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><p>在【系统变量】下新建【NODE_PATH】，输入【D:\Program File\nodejs\node_modules】，将【用户变量】下的【Path】修改为【D:\Program Files\nodejs\node_global】<img src="https://img-blog.csdnimg.cn/20210304164859710.png" alt="在这里插入图片描述"></p><p><img src="https://img-blog.csdnimg.cn/20210304165130983.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h4eTEyMzRnZ2c=,size_16,color_FFFFFF,t_70"></p><p>5、测试<br>在cmd命令下执行 npm install webpack -g 然后安装成功后可以看到自定义的两个文件夹已生效<img src="https://img-blog.csdnimg.cn/355e6622e3cb440984172afb1b707661.png" alt="img"></p><p><img src="https://img-blog.csdnimg.cn/20210304162035823.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h4eTEyMzRnZ2c=,size_16,color_FFFFFF,t_70"></p><p>webpack 也已安装成功，执行 npm webpack -v 可以看到所安装webpack的版本号：<img src="https://img-blog.csdnimg.cn/05e3f45288a342e1a2cb9556fea2e821.png" alt="img"></p><p>6、安装完node以后，cmd进入vue项目根路径下。<br>运行命令：npm install （下载必须的依赖，如果报错了就是node环境有问题，查百度重新搭环境）<img src="https://img-blog.csdnimg.cn/b87e4791e84c4f208ddfe2083a9a4d6e.png" alt="img"></p><p>之后可以发现Vue项目下出现了node_modules<img src="https://img-blog.csdnimg.cn/a2d08d73532a46f6aed464acd7007e49.png" alt="img"></p><p>7、在idea中导入vue项目并运行<br>8、导入成功，选择</p><p><img src="https://img-blog.csdnimg.cn/20210304171702453.png" alt="在这里插入图片描述"></p><p><img src="https://img-blog.csdnimg.cn/e076ea8053d243f28943a8e73bbd70ff.png"></p><p>项目运行</p><p><img src="https://img-blog.csdnimg.cn/435dbeb78ba3438eb082aba6b7acf1db.png" alt="img"></p><p>浏览器输入网址 <a href="http://localhost:8080运行成功">http://localhost:8080运行成功</a></p><p><img src="https://img-blog.csdnimg.cn/23770775886d48bc9a14f7bd3fc38541.png" alt="img"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> IDEA </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IDEA </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>IDEA中配置Python环境并运行</title>
       <link href="/2023/06/06/IDEA%E4%B8%AD%E9%85%8D%E7%BD%AEPython%E7%8E%AF%E5%A2%83%E5%B9%B6%E8%BF%90%E8%A1%8C/"/>
       <url>/2023/06/06/IDEA%E4%B8%AD%E9%85%8D%E7%BD%AEPython%E7%8E%AF%E5%A2%83%E5%B9%B6%E8%BF%90%E8%A1%8C/</url>
