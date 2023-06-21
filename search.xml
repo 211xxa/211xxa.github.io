@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Nunjucks Error: 解决办法</title>
+      <link href="/2023/06/21/Nunjucks-Error-%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
+      <url>/2023/06/21/Nunjucks-Error-%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<p>成文章的时候就报了一个 Nunjucks Errors: balabala 后面还是文章的 html 信息等等等，，这个错误是因为文章里出现了一些类似 {{}} 的内容什么的（比如我现在打出的这个，，，，然后 hexo 的文章渲染使用的是 Nunjucks ，他会将那几个大括号识别成自己的语法，，这样生成的时候就会报错，，，</p><p>解决办法：</p><p><img src="https://img-blog.csdnimg.cn/20200828101958389.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTMzMzkzNA==,size_16,color_FFFFFF,t_70#pic_center"></p><p>翻译过来就是： 转义内容 Hexo使用Nunjucks渲染帖子（较早的版本使用Swig，它们具有相似的语法）。用{ { } }或{ ％ ％ }包装的内容将被解析，并可能导致问题。您可以使用原始标签插件包装敏感内容。<br>找到正文里面{ {、} }、{ %、% }这样的语句，作如下修改：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% raw %&#125;//敏感内容前加上这个</span><br><span class="line">Hello &#123;&#123; sensitive &#125;&#125;l/敏感内容被包装在中间</span><br><span class="line">&#123;% endraw %&#125;//敏感内容后加上这个</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; &#123;`和`&#125; &#125;`之间加上空格变成`&#123; &#123;`和`&#125; &#125;` （这里看不出区别，知道这个意思就行…） `&#123; %`和`% &#125;`之间加上空格变成`&#123; %`和`% &#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 解决办法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 解决办法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Vue章节复习</title>
       <link href="/2023/06/21/Vue%E7%AB%A0%E8%8A%82%E5%A4%8D%E4%B9%A0/"/>
       <url>/2023/06/21/Vue%E7%AB%A0%E8%8A%82%E5%A4%8D%E4%B9%A0/</url>
