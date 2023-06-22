@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Apache安装配置</title>
+      <link href="/2023/06/22/Apache%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/"/>
+      <url>/2023/06/22/Apache%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</url>
+      
+        <content type="html"><![CDATA[<p>Apache，全称为Apache HTTP Server，是一个功能强大且广泛使用的开源Web服务器软件。它是由Apache软件基金会开发和维护的，是互联网上最流行的服务器软件之一。<br>以下是Apache的一些主要特点和功能：</p><p>跨平台性：Apache可以在多种操作系统上运行，包括Windows、Linux、macOS等。这使得它成为一个通用的Web服务器解决方案。<br>可扩展性：Apache支持模块化的架构，可以通过加载各种模块来扩展其功能。这使得Apache可以应用于各种不同的场景和需求。<br>安全性：Apache提供了一系列的安全功能和配置选项，包括SSL&#x2F;TLS支持、访问控制、密码保护、防止DDoS攻击等。这些功能有助于保护服务器和网站的安全。<br>高性能：Apache通过使用多进程或多线程的处理模式，以及优化的请求处理算法，来提供出色的性能和吞吐量。<br>可靠性：Apache被广泛认为是稳定可靠的服务器软件，经过了多年的发展和测试，具有良好的容错能力和稳定性。<br>支持多种编程语言和技术：Apache可以与各种编程语言和技术集成，如PHP、Python、Perl等。它支持CGI、FastCGI、modperl、modphp等模块，提供灵活的开发环境。<br>强大的配置选项：Apache提供丰富的配置选项，允许管理员根据自己的需求进行定制和优化。这使得Apache非常灵活，可以适应各种不同的应用场景。</p><h5 id="总之，Apache是一个可靠、高性能和可扩展的Web服务器软件，适用于各种规模的网站和应用程序。它在互联网领域具有广泛的应用和支持，并且经过了长期的发展和改进，仍然是最受欢迎的服务器软件之一。"><a href="#总之，Apache是一个可靠、高性能和可扩展的Web服务器软件，适用于各种规模的网站和应用程序。它在互联网领域具有广泛的应用和支持，并且经过了长期的发展和改进，仍然是最受欢迎的服务器软件之一。" class="headerlink" title="总之，Apache是一个可靠、高性能和可扩展的Web服务器软件，适用于各种规模的网站和应用程序。它在互联网领域具有广泛的应用和支持，并且经过了长期的发展和改进，仍然是最受欢迎的服务器软件之一。"></a>总之，Apache是一个可靠、高性能和可扩展的Web服务器软件，适用于各种规模的网站和应用程序。它在互联网领域具有广泛的应用和支持，并且经过了长期的发展和改进，仍然是最受欢迎的服务器软件之一。</h5><p>官网下载地址<a href="https://www.apachehaus.com/cgi-bin/download.plx">https://www.apachehaus.com/cgi-bin/download.plx</a><br>网盘链接：<a href="https://pan.baidu.com/s/16ewAcY0WXSG38bTVMSHBxg">https://pan.baidu.com/s/16ewAcY0WXSG38bTVMSHBxg</a><br>提取码：uju4</p><p><img src="https://img-blog.csdnimg.cn/20200912172447771.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MDM0NzA4,size_16,color_FFFFFF,t_70#pic_center"></p><h3 id="修改配置"><a href="#修改配置" class="headerlink" title="修改配置"></a>修改配置</h3><p>打开conf&#x2F;httpd.conf，修改成你的解压路径。<br><img src="https://img-blog.csdnimg.cn/20200912173859801.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MDM0NzA4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><p><img src="https://img-blog.csdnimg.cn/20200912173956139.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MDM0NzA4,size_16,color_FFFFFF,t_70#pic_center"></p><h3 id="测试配置文件是否合法"><a href="#测试配置文件是否合法" class="headerlink" title="测试配置文件是否合法"></a>测试配置文件是否合法</h3><p>win+r输入cmd回车</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">httpd -t #测试配置文件是否合法</span><br></pre></td></tr></table></figure><p><img src="https://img-blog.csdnimg.cn/20200913161205774.png#pic_center"></p><h3 id="安装Apache服务"><a href="#安装Apache服务" class="headerlink" title="安装Apache服务"></a>安装Apache服务</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">httpd -k install -n Apache2.4 #-n后面表示自定义访问名称</span><br></pre></td></tr></table></figure><p><img src="https://img-blog.csdnimg.cn/20200913164937996.png#pic_center"></p><h5 id="注意：这里需要的是使用管理员进行操作cmd"><a href="#注意：这里需要的是使用管理员进行操作cmd" class="headerlink" title="注意：这里需要的是使用管理员进行操作cmd"></a>注意：这里需要的是使用管理员进行操作cmd</h5><h3 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">httpd -k start  #启动</span><br><span class="line">httpd -k stop   #停止</span><br></pre></td></tr></table></figure><p><img src="https://img-blog.csdnimg.cn/20200913165157811.png#pic_center"></p><p>也可以手动打开</p><p>win+r输入services.msc回车</p><p><img src="https://img-blog.csdnimg.cn/20200913163220516.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MDM0NzA4,size_16,color_FFFFFF,t_70#pic_center"></p><p>还可以直接运行exe</p><p>双击运行解压目录&#x2F;bin下的ApacheMonitor.exe</p><p><img src="https://img-blog.csdnimg.cn/20200913163810331.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MDM0NzA4,size_16,color_FFFFFF,t_70#pic_center"></p><p>点击桌面右下角图标，然后点击start</p><p><img src="https://img-blog.csdnimg.cn/20200913163857401.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MDM0NzA4,size_16,color_FFFFFF,t_70#pic_center"></p><p><img src="https://img-blog.csdnimg.cn/20200913164034666.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MDM0NzA4,size_16,color_FFFFFF,t_70#pic_center"></p><h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p>在浏览器访问<a href="http://localhost/">http://localhost</a></p><p><img src="https://img-blog.csdnimg.cn/20200913163411572.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MDM0NzA4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><p>如果出现上图，那么恭喜你Apache安装配置就完成了。</p><p>具体内容出自<a href="https://blog.csdn.net/qq_45034708/article/details/108565486?ops_request_misc=%7B%22request_id%22:%22168741175316782425173949%22,%22scm%22:%2220140713.130102334..%22%7D&request_id=168741175316782425173949&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-108565486-null-null.142%5Ev88%5Econtrol_2,239%5Ev2%5Einsert_chatgpt&utm_term=Apache&spm=1018.2226.3001.4187">(59条消息) Apache安装配置(Windows和Linux)-有手就行_apache安装与配置_吾仄lo咚锵的博客-CSDN博客</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Apache </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Apache </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>爬虫基本原理</title>
       <link href="/2023/06/22/%E7%88%AC%E8%99%AB%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86/"/>
       <url>/2023/06/22/%E7%88%AC%E8%99%AB%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86/</url>
