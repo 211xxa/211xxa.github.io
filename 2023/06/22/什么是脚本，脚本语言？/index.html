@@ -1,0 +1,436 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>什么是脚本，脚本语言？ | 谢安の博客</title><meta name="author" content="谢安"><meta name="copyright" content="谢安"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="referrer" content="no-referrer"><meta name="description" content="一、脚本百科解释： 脚本（script）是使用一种特定的描述性语言，依据一定的格式编写的可执行文件，又称作宏或批处理文件。 脚本通常可以由应用程序临时调用并执行。各类脚本目前被广泛地应用于网页设计中，因为脚本不仅可以减小网页的规模和提高网页浏览速度，而且可以丰富网页的表现，如动画、声音等。举个最常见的例子，当我们点击网页上的E－mail地址时能自动调用Outlook Express或Foxmail">
+<meta property="og:type" content="article">
+<meta property="og:title" content="什么是脚本，脚本语言？">
+<meta property="og:url" content="http://example.com/2023/06/22/%E4%BB%80%E4%B9%88%E6%98%AF%E8%84%9A%E6%9C%AC%EF%BC%8C%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80%EF%BC%9F/index.html">
+<meta property="og:site_name" content="谢安の博客">
+<meta property="og:description" content="一、脚本百科解释： 脚本（script）是使用一种特定的描述性语言，依据一定的格式编写的可执行文件，又称作宏或批处理文件。 脚本通常可以由应用程序临时调用并执行。各类脚本目前被广泛地应用于网页设计中，因为脚本不仅可以减小网页的规模和提高网页浏览速度，而且可以丰富网页的表现，如动画、声音等。举个最常见的例子，当我们点击网页上的E－mail地址时能自动调用Outlook Express或Foxmail">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://p9.qhimg.com/bdm/1024_768_85/t01384ab155e38303a5.jpg">
+<meta property="article:published_time" content="2023-06-22T02:33:10.000Z">
+<meta property="article:modified_time" content="2023-06-22T02:38:28.442Z">
+<meta property="article:author" content="谢安">
+<meta property="article:tag" content="计算机基础">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://p9.qhimg.com/bdm/1024_768_85/t01384ab155e38303a5.jpg"><link rel="shortcut icon" href="/img/favicon.jpg"><link rel="canonical" href="http://example.com/2023/06/22/%E4%BB%80%E4%B9%88%E6%98%AF%E8%84%9A%E6%9C%AC%EF%BC%8C%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80%EF%BC%9F/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '什么是脚本，脚本语言？',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-06-22 10:38:28'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/touxiangtexiao.css"><link rel="stylesheet" href="/css/custom.css"><script src="/js/sakura.js"></script><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-clock/lib/clock.min.css" /><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">40</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">15</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://p9.qhimg.com/bdm/1024_768_85/t01384ab155e38303a5.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="谢安の博客"><span class="site-name">谢安の博客</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">什么是脚本，脚本语言？</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-06-22T02:33:10.000Z" title="发表于 2023-06-22 10:33:10">2023-06-22</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-06-22T02:38:28.442Z" title="更新于 2023-06-22 10:38:28">2023-06-22</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="什么是脚本，脚本语言？"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="一、脚本"><a href="#一、脚本" class="headerlink" title="一、脚本"></a>一、脚本</h2><p><strong>百科解释：</strong></p>
+<p>脚本（script）是使用一种特定的描述性语言，依据一定的格式编写的<strong>可执行文件</strong>，又称作<strong>宏或批处理文件</strong>。</p>
+<p>脚本通常可以由应用程序临时调用并执行。各类脚本目前被广泛地应用于网页设计中，因为脚本不仅可以减小网页的规模和提高网页浏览速度，而且可以丰富网页的表现，如动画、声音等。举个最常见的例子，当我们点击网页上的E－mail地址时能自动调用Outlook <a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=Express&spm=1001.2101.3001.7020">Express</a>或Foxmail这类邮件软件，就是通过脚本功能来实现的。也正因为脚本的这些特点，往往被一些别有用心的人所利用。例如在脚本中加入一些破坏计算机系统的命令，这样当用户浏览网页时，一旦调用这类脚本，便会使用户的系统受到攻击。所以用户应根据对所访问网页的信任程度选择安全等级，特别是对于那些本身内容就非法的网页，更不要轻易允许使用脚本。通过“安全设置”对话框，选择“脚本”选项下的各种设置就可以轻松实现对脚本的禁用和启用。</p>
+<p><strong>通俗解释：</strong></p>
+<p>脚本（Script）的意思最早是从演艺界来的。如果没有脚本，该怎么表演？ 表演者只能即兴发挥，或者靠导演的口述来进行。</p>
+<p>有了脚本，带来的最大变化是什么？</p>
+<ul>
+<li>可重复。也就是说，有了脚本，可以把我们既定的一个规程不断重复。</li>
+<li>脚本需要人来执行。因此脚本的执行效率与具体的执行人有关系。</li>
+<li>如果在表演过程中，商定了某种大家认可的修改，会考虑对脚本进行修改，用以将我们修改的意图记录下来，将来的再现就可以反映这个修改。</li>
+</ul>
+<p>对于 IT 行业，脚本这个词，是个绝妙的翻译。他贴切的表达了这几个含义（web前端开发中scripts文件下有.js文件就是脚本）。</p>
+<ul>
+<li>脚本的用意是为了可再现的重复一个设定好的规程。</li>
+<li>脚本需要有一个解释器来执行。</li>
+<li>脚本能够方便的，快速的，经常的被修改。</li>
+</ul>
+<p>所以说，要是打比喻：</p>
+<p>你打开资源管理器，用鼠标把一个文件拖到另外一个地方，这是即兴表演。</p>
+<p>你写几行命令，把他保存下来， 一执行就做了上面的事情，这就是脚本。</p>
+<p>即兴表演，你重复100次，累死了。</p>
+<p>脚本，你重复执行100次，全是计算机搞定了</p>
+<p>假设你经常从网上下东西，全都放在 D 盘那个叫做 downloads 的文件夹里。而你有分类的癖好，每周都要把下载下来的图片放到 pic 文件夹里，pdf 放到 book 文件夹里，mp3 和 wma 文件放到 music 文件夹里。手动分了一年之后你终于厌倦了，于是你打开记事本，写了以下的三行字：</p>
+<ul>
+<li>copy &#x2F;Y D:\download*.jpg D:\pic\</li>
+<li>copy &#x2F;Y D:\download*.pdf D:\book\</li>
+<li>copy &#x2F;Y D:\download*.mp3 D:\music\</li>
+</ul>
+<p>然后把它存成一个.bat 文件。想起来的时候你就双击一下这个文件，然后就发现 download 里的三类文件都被拷到它们该去的地方了。这就是个非常简单的脚本。</p>
+<h2 id="二、脚本语言"><a href="#二、脚本语言" class="headerlink" title="二、脚本语言"></a>二、脚本语言</h2><p>脚本语言泛指单用作简单編程任务（如shell scripts）。</p>
+<p>编程语言：</p>
+<ul>
+<li>机器语言：0和1,人类几乎没办法阅读、理解</li>
+<li>汇编语言：由一些特定指令构成，学习成本比较高；在底层做一些驱动，体积小，运行效率高</li>
+<li>高级语言：c、c++、java、php、python、javascript等</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="https://img-blog.csdnimg.cn/20190107155042181.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NjcmF0X0tvbmc=,size_16,color_FFFFFF,t_70"></p>
+<h6 id="脚本语言是："><a href="#脚本语言是：" class="headerlink" title="脚本语言是："></a>脚本语言是：</h6><ul>
+<li>一种介乎于 HTML 和诸如 JAVA 、 Visual Basic 、 C++ 等编程语言之间的一种特殊的语言。</li>
+<li>尽管它更接近后者，但它却不具有编程语言复杂、严谨的语法和规则。</li>
+<li>常见的脚本语言有：Python、JavaScript、</li>
+</ul>
+<h6 id="动态程序一般有两种实现方式，一是二进制方式，一是脚本方式。"><a href="#动态程序一般有两种实现方式，一是二进制方式，一是脚本方式。" class="headerlink" title="动态程序一般有两种实现方式，一是二进制方式，一是脚本方式。"></a>动态程序一般有两种实现方式，一是二进制方式，一是脚本方式。</h6><ol>
+<li>二进制方式是先将我们编写的程序进行编译，变成机器可识别的指令代码（如.exe文件），然后再执行。这种编译好的程序我们只能执行、使用，却看不到他的程序内容。</li>
+<li>脚本简单地说就是一条条的文字命令，这些文字命令是我们可以看到的（如可以用记事本打开查看、编辑），脚本程序在执行时，是由系统的一个解释器，将其一条条的翻译成机器可识别的指令，并按程序顺序执行。因为脚本在执行时多了一道翻译的过程，所以它比二进制程序执行效率要稍低一些。</li>
+</ol>
+<p>我们上面提到的各种<a target="_blank" rel="noopener" href="https://www.baidu.com/s?wd=%E5%8A%A8%E6%80%81%E8%AF%AD%E8%A8%80&tn=SE_PcZhidaonwhc_ngpagmjz&rsv_dl=gh_pc_zhidao">动态语言</a>，如Python、ASP、PHP、CGI、JSP等，都是<a target="_blank" rel="noopener" href="https://www.baidu.com/s?wd=%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80&tn=SE_PcZhidaonwhc_ngpagmjz&rsv_dl=gh_pc_zhidao">脚本语言</a>。</p>
+<h5 id="系统语言与脚本语言之间的区别有很多，但主要的区别是："><a href="#系统语言与脚本语言之间的区别有很多，但主要的区别是：" class="headerlink" title="系统语言与脚本语言之间的区别有很多，但主要的区别是："></a>系统语言与脚本语言之间的区别有很多，但主要的区别是：</h5><ul>
+<li>1、抽象的级别：这是最重要、最明显示的不同。脚本语言对程序员提供了更高级的抽象。这明显表现在：在这种语言自身中，存在有高级的数据结构，如列表和字典结构，和对这种结构简单方便的嵌套和操作。这样可以创建非常成功的程序。</li>
+<li>2、类型定义：系统语言通常是强类型和静态类型定义。这就意味着所有变量的类型要在程序中指定，在编译时检查。相反地，脚本语言是最松散的类型定义，完全没有类型声明，并且在运行时进行动态类型检查。</li>
+<li>3、执行：系统语言的特点是编译的。程序被编译成可执行的二进制。另一方面，脚本语言的特点是解释，也就是，指令被立即执行，不存在一个编译的中间状态。这就意味着脚本语言是交互式的(你可以在提示符下敲入命令，并且看到结果)，这是另一个巨大的胜利。这样完全将编译过程从编辑-编译-运行循环中去掉了。</li>
+<li>4、速度：以上三点是脚本语言一方面在速度与效率， 一方面在易用性与表示式的强大性之间进行折衷的典型例子。这就使得脚本语言的执行速度比系统语言慢一个数量级。这就是对脚本语言诽谤最多的方面。性能的降低不是真正的问题，因为思想是用脚本语言来组合组件，这些组件是用象C 这样的快速系统语言来编写的。所以所有需要运行快速的东西将因为是用快速的语言实现的而运行得快速。</li>
+</ul>
+<p>脚本语言只用于将东西绑在一起，并且这些通常不是性能的瓶颈( 或如果是，你需要重新检查你的设计)。</p>
+<h3 id="三、总结"><a href="#三、总结" class="headerlink" title="三、总结"></a>三、总结</h3><ol>
+<li>脚本就是给机器一行一行执行的文本</li>
+<li>Bash 脚本有 Bash 脚本的语法，Node.js 脚本有 JS 语法</li>
+<li>不管是那种脚本，能实现的功能都差不多，只是语法不同</li>
+<li>Bash 脚本的语法挺奇葩的，比如 $1 $# 等符号</li>
+<li>不用特别去学 Bash 脚本的用法，遇到不会的就 Google</li>
+<li>不用特别去学 Node.js 脚本的用法，遇到不会的就 Google</li>
+<li>新人写代码最大的问题就是「抄错了」<ol>
+<li>多写了一个空格</li>
+<li>少写了一个空格</li>
+<li>单词拼错了</li>
+<li>没有加分号</li>
+<li>多加了分号</li>
+</ol>
+</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">谢安</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2023/06/22/%E4%BB%80%E4%B9%88%E6%98%AF%E8%84%9A%E6%9C%AC%EF%BC%8C%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80%EF%BC%9F/">http://example.com/2023/06/22/%E4%BB%80%E4%B9%88%E6%98%AF%E8%84%9A%E6%9C%AC%EF%BC%8C%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80%EF%BC%9F/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">谢安の博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a></div><div class="post_share"><div class="social-share" data-image="https://p9.qhimg.com/bdm/1024_768_85/t01384ab155e38303a5.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="/img/wechat.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="/img/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2023/06/21/Nunjucks-Error-%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" title="Nunjucks Error: 解决办法"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="https://img-blog.csdnimg.cn/20200828101640100.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTMzMzkzNA==,size_16,color_FFFFFF,t_70#pic_center" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Nunjucks Error: 解决办法</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="comment-switch"><span class="first-comment">Valine</span><span class="switch-btn"></span><span class="second-comment">Disqus</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div><div><div id="disqus_thread"></div></div><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">谢安</div><div class="author-info__description">让子弹飞一会儿</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">40</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">15</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://haiyong.site/moyu/"><i class="iconfont icon-youxishoubing"></i><span>摸鱼</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content"><p align="center">微信号：O99776161</p> <p align="center">QQ号：3114921075</p></div></div><div class="card-widget" id="newYear"><div class="item-headline"><i></i><span></span></div><div class="item-content"><div id="newYear-main"><div class="mask"></div> <p class="title"></p> <div class="newYear-time"></div> <p class="today" style="text-align: right;"></p> </div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E8%84%9A%E6%9C%AC"><span class="toc-number">1.</span> <span class="toc-text">一、脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80"><span class="toc-number">2.</span> <span class="toc-text">二、脚本语言</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80%E6%98%AF%EF%BC%9A"><span class="toc-number">2.0.0.0.1.</span> <span class="toc-text">脚本语言是：</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E7%A8%8B%E5%BA%8F%E4%B8%80%E8%88%AC%E6%9C%89%E4%B8%A4%E7%A7%8D%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F%EF%BC%8C%E4%B8%80%E6%98%AF%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%B9%E5%BC%8F%EF%BC%8C%E4%B8%80%E6%98%AF%E8%84%9A%E6%9C%AC%E6%96%B9%E5%BC%8F%E3%80%82"><span class="toc-number">2.0.0.0.2.</span> <span class="toc-text">动态程序一般有两种实现方式，一是二进制方式，一是脚本方式。</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8C%BA%E5%88%AB%E6%9C%89%E5%BE%88%E5%A4%9A%EF%BC%8C%E4%BD%86%E4%B8%BB%E8%A6%81%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%EF%BC%9A"><span class="toc-number">2.0.0.1.</span> <span class="toc-text">系统语言与脚本语言之间的区别有很多，但主要的区别是：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%80%BB%E7%BB%93"><span class="toc-number">2.1.</span> <span class="toc-text">三、总结</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/06/22/%E4%BB%80%E4%B9%88%E6%98%AF%E8%84%9A%E6%9C%AC%EF%BC%8C%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80%EF%BC%9F/" title="什么是脚本，脚本语言？"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="https://p9.qhimg.com/bdm/1024_768_85/t01384ab155e38303a5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="什么是脚本，脚本语言？"/></a><div class="content"><a class="title" href="/2023/06/22/%E4%BB%80%E4%B9%88%E6%98%AF%E8%84%9A%E6%9C%AC%EF%BC%8C%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80%EF%BC%9F/" title="什么是脚本，脚本语言？">什么是脚本，脚本语言？</a><time datetime="2023-06-22T02:33:10.000Z" title="发表于 2023-06-22 10:33:10">2023-06-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/21/Nunjucks-Error-%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" title="Nunjucks Error: 解决办法"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="https://img-blog.csdnimg.cn/20200828101640100.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTMzMzkzNA==,size_16,color_FFFFFF,t_70#pic_center" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Nunjucks Error: 解决办法"/></a><div class="content"><a class="title" href="/2023/06/21/Nunjucks-Error-%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" title="Nunjucks Error: 解决办法">Nunjucks Error: 解决办法</a><time datetime="2023-06-21T02:30:39.000Z" title="发表于 2023-06-21 10:30:39">2023-06-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/21/Vue%E7%AB%A0%E8%8A%82%E5%A4%8D%E4%B9%A0/" title="Vue章节复习"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="https://cn.bing.com/th?id=OVFT.JpmuAz2AYh-Ncunzfx1qqi&amp;pid=News&amp;w=132&amp;h=88&amp;c=14&amp;rs=2&amp;qlt=90&amp;dpr=2" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Vue章节复习"/></a><div class="content"><a class="title" href="/2023/06/21/Vue%E7%AB%A0%E8%8A%82%E5%A4%8D%E4%B9%A0/" title="Vue章节复习">Vue章节复习</a><time datetime="2023-06-21T00:58:44.000Z" title="发表于 2023-06-21 08:58:44">2023-06-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/11/javaweb%E3%80%81spring%E3%80%81springmvc%E5%92%8Cspringboot%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%8C%E9%83%BD%E6%98%AF%E5%81%9A%E4%BB%80%E4%B9%88%E7%94%A8%E7%9A%84%EF%BC%9F/" title="javaweb、spring、springmvc和springboot有什么区别，都是做什么用的？"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="https://img-blog.csdnimg.cn/2019121810082198.png?x-oss-process&amp;#61;image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly90aGlua3dvbi5ibG9nLmNzZG4ubmV0,size_16,color_FFFFFF,t_70" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="javaweb、spring、springmvc和springboot有什么区别，都是做什么用的？"/></a><div class="content"><a class="title" href="/2023/06/11/javaweb%E3%80%81spring%E3%80%81springmvc%E5%92%8Cspringboot%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%8C%E9%83%BD%E6%98%AF%E5%81%9A%E4%BB%80%E4%B9%88%E7%94%A8%E7%9A%84%EF%BC%9F/" title="javaweb、spring、springmvc和springboot有什么区别，都是做什么用的？">javaweb、spring、springmvc和springboot有什么区别，都是做什么用的？</a><time datetime="2023-06-11T04:48:43.000Z" title="发表于 2023-06-11 12:48:43">2023-06-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/10/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%90%AD%E5%BB%BA%E4%BF%84%E7%BD%97%E6%96%AF%E6%96%B9%E5%9D%97/" title="前端技术搭建俄罗斯方块"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="https://img-blog.csdnimg.cn/b3b3a7802e1d4f4e8cdcb443f0705d5f.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="前端技术搭建俄罗斯方块"/></a><div class="content"><a class="title" href="/2023/06/10/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E6%90%AD%E5%BB%BA%E4%BF%84%E7%BD%97%E6%96%AF%E6%96%B9%E5%9D%97/" title="前端技术搭建俄罗斯方块">前端技术搭建俄罗斯方块</a><time datetime="2023-06-10T15:32:44.000Z" title="发表于 2023-06-10 23:32:44">2023-06-10</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://p9.qhimg.com/bdm/1024_768_85/t01384ab155e38303a5.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023  <i id="heartbeat" class="fa fas fa-heartbeat"></i> 谢安</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div><link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css"></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '',
+      appKey: '',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script>function loadDisqus () {
+  var disqus_config = function () {
+    this.page.url = 'http://example.com/2023/06/22/%E4%BB%80%E4%B9%88%E6%98%AF%E8%84%9A%E6%9C%AC%EF%BC%8C%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80%EF%BC%9F/'
+    this.page.identifier = '/2023/06/22/%E4%BB%80%E4%B9%88%E6%98%AF%E8%84%9A%E6%9C%AC%EF%BC%8C%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80%EF%BC%9F/'
+    this.page.title = '什么是脚本，脚本语言？'
+  };
+
+  window.disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+
+  document.getElementById('darkmode').addEventListener('click', () => {
+    setTimeout(() => window.disqusReset(), 200)
+  })
+}
+
+if ('Valine' === 'Disqus' || !true) {
+  if (true) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script><script>function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk(Object.assign({
+      clientID: '1edcf51120d78d14fafb',
+      clientSecret: '2709738244ad1c73a3a9b17383995bc4fe983c89',
+      repo: 'pinglun',
+      owner: '',
+      admin: [''],
+      id: '7e822fd6e1cda1b2eb0b850587cbc569',
+      updateCountCallback: commentCount
+    },))
+
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    getCSS('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css')
+    getScript('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Valine' === 'Gitalk' || !true) {
+  if (true) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div><script src="/js/sakura.js"></script><script async src="/js/title.js"></script><script src="https://cdn.staticfile.org/jquery/3.6.3/jquery.min.js"></script><script async data-pjax src="https://cdn.wpon.cn/2022-sucai/Gold-ingot.js"></script><script async data-pjax src="/js/newYear.js"></script><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+    function butterfly_categories_card_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<style>li.categoryBar-list-item{width:32.3%;}.categoryBar-list{max-height: 190px;overflow:auto;}.categoryBar-list::-webkit-scrollbar{width:0!important}@media screen and (max-width: 650px){.categoryBar-list{max-height: 160px;}}</style><div class="recent-post-item" style="height:auto;width:100%;padding:0px;"><div id="categoryBar"><ul class="categoryBar-list"><li class="categoryBar-list-item" style="background:url(https://assets.akilar.top/image/cover1.webp);"> <a class="categoryBar-list-link" href="categories/原理/">原理</a><span class="categoryBar-list-count">3</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://assets.akilar.top/image/cover2.webp);"> <a class="categoryBar-list-link" href="categories/hexo/">hexo</a><span class="categoryBar-list-count">3</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://assets.akilar.top/image/cover3.webp);"> <a class="categoryBar-list-link" href="categories/解决办法/">解决办法</a><span class="categoryBar-list-count">13</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://assets.akilar.top/image/cover4.webp);"> <a class="categoryBar-list-link" href="categories/书籍/">书籍</a><span class="categoryBar-list-count">3</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://assets.akilar.top/image/cover5.webp);"> <a class="categoryBar-list-link" href="categories/美剧/">美剧</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://assets.akilar.top/image/cover6.webp);"> <a class="categoryBar-list-link" href="categories/选购指南/">选购指南</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/MySQL/">MySQL</a><span class="categoryBar-list-count">3</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/软件/">软件</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/IDEA/">IDEA</a><span class="categoryBar-list-count">4</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/Gitee/">Gitee</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/GitHub/">GitHub</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/Vue/">Vue</a><span class="categoryBar-list-count">2</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/前端小游戏/">前端小游戏</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/Java/">Java</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/计算机基础/">计算机基础</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li></ul></div></div>';
+      console.log('已挂载butterfly_categories_card')
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      }
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    butterfly_categories_card_injector_config()
+    }
+  </script><script data-pjax>
+  function butterfly_clock_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="https://npm.elemecdn.com/hexo-butterfly-clock/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_injector_config();
+  }
+  </script><script src="https://pv.sohu.com/cityjson?ie=utf-8"></script><script data-pjax src="https://npm.elemecdn.com/hexo-butterfly-clock/lib/clock.min.js"></script><script data-pjax>
+  function butterfly_clock_anzhiyu_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="https://npm.elemecdn.com/hexo-butterfly-clock/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock_anzhiyu')
+    if(parent_div_git) {
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var qweather_key = 'b16a1fa0e63c46a4b8f28abfb06ae3fe';
+  var gaud_map_key = 'e2b04289e870b005374ee030148d64fd&s=rsv3';
+  var baidu_ak_key = 'undefined';
+  var flag = 0;
+  var clock_rectangle = '112.6534116,27.96920845';
+  var clock_default_rectangle_enable = 'false';
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  </script><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '2s');
+    arr[i].setAttribute('data-wow-delay', '1s');
+    arr[i].setAttribute('data-wow-offset', '100');
+    arr[i].setAttribute('data-wow-iteration', '2');
+  }</script><script async="async">var arr = document.getElementsByClassName('card-widget');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script></div><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow_init.js"></script><script data-pjax>
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2023/03/22/Hexo-butterfly添加樱花动态效果背景/" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="https://ts1.cn.mm.bing.net/th/id/R-C.fad21c0f37493382d44104011a85c1d1?rik=LLDab1WYCxDY1g&amp;riu=http%3a%2f%2fimg.mm4000.com%2ffile%2f3%2f70%2f8c8237035e.jpg&amp;ehk=h1vclPHGSaz7IKF5deFEAWXE2RyqM2Ia0VwgcWc7p98%3d&amp;risl=&amp;pid=ImgRaw&amp;r=0" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-03-22</span><a class="blog-slider__title" href="2023/03/22/Hexo-butterfly添加樱花动态效果背景/" alt="">Hexo-butterfly添加樱花动态效果背景~</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" href="2023/03/22/Hexo-butterfly添加樱花动态效果背景/" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2023/03/19/我的第一篇文章/" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="https://p6.qhimg.com/bdm/1024_768_85/t01910270b46673d777.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-03-19</span><a class="blog-slider__title" href="2023/03/19/我的第一篇文章/" alt="">Hexo搭建博客的底层原理</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" href="2023/03/19/我的第一篇文章/" alt="">详情   </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js"></script><script defer data-pjax src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper_init.js"></script><!-- hexo injector body_end end -->
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n||document.documentElement.clientHeight*n)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300,"hOffset":20,"vOffset":-20},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/"});</script></body></html>
