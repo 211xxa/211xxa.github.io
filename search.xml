@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Edge浏览器下载插件一直失败解决办法</title>
+      <link href="/2023/08/23/Edge%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8B%E8%BD%BD%E6%8F%92%E4%BB%B6%E4%B8%80%E7%9B%B4%E5%A4%B1%E8%B4%A5%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
+      <url>/2023/08/23/Edge%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8B%E8%BD%BD%E6%8F%92%E4%BB%B6%E4%B8%80%E7%9B%B4%E5%A4%B1%E8%B4%A5%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<p><strong>本来好好的今天莫名其妙的添加一个插件会报错</strong></p><p><img src="https://pica.zhimg.com/80/v2-fe82f4a48997820a495f6d7842d08136_1440w.webp?source=1940ef5c"></p><h2 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a><strong>解决方法：</strong></h2><p><strong>1、打开我的电脑: 输入</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Windows\System32\drivers\etc</span><br></pre></td></tr></table></figure><p><img src="https://pic1.zhimg.com/80/v2-27c5d1c1fea2e8919e4627d4b62f3a2c_1440w.webp?source=1940ef5c"></p><p>在该目录下选择文件夹中的 <strong>host</strong> 文件 并鼠标右键选择打开方式-&gt;选择<a href="https://www.zhihu.com/search?q=%E8%AE%B0%E4%BA%8B%E6%9C%AC&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:2447357280%7D">记事本</a>打开</p><p><img src="https://picx.zhimg.com/80/v2-ba430157f200c882c4b65f7c082891a3_1440w.webp?source=1940ef5c"></p><p>打开之后在最后两行添加</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">131.253.33.219 edge.microsoft.com</span><br><span class="line">131.253.33.219 msedgeextensions.sf.tlu.dl.delivery.mp.microsoft.com</span><br></pre></td></tr></table></figure><p><strong>然后保存-&gt;保存后他的后缀会是 .txt结尾 这时候我们需要将他的后缀删去即可</strong></p><p><strong>可能会遇到的问题：</strong></p><p><strong>管理员问题：没有权限保存 但问题是你是管理员</strong></p><p><strong>解决办法：</strong>还是继续保存-&gt;然后将保存到别处(还是这个<strong>host</strong>文件，是我们已经修改过的)-&gt;将 <strong>.txt</strong> 后缀删去-&gt;再放到该文件夹内 <strong>C:\Windows\System32\drivers\etc</strong> 进来就OK了</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 解决办法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 解决办法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>什么是dll文件</title>
       <link href="/2023/08/14/%E4%BB%80%E4%B9%88%E6%98%AFdll%E6%96%87%E4%BB%B6/"/>
       <url>/2023/08/14/%E4%BB%80%E4%B9%88%E6%98%AFdll%E6%96%87%E4%BB%B6/</url>
