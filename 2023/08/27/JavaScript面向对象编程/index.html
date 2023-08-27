@@ -1,0 +1,515 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>JavaScript面向对象编程 | 谢安の博客</title><meta name="author" content="谢安"><meta name="copyright" content="谢安"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="referrer" content="no-referrer"><meta name="description" content="面向对象是软件开发中的一种方法，现在被广泛使用。面向对象是使用一种抽象的方式来模拟现实世界的编程模式。在面向对象中，我们可以将程序看做一个个对象互相协作的结果。面向对象具有三大特性和六大原则。三大特性是继承、多态和封装。六大原则是单一职责原则（SRP）、开放封闭原则（OCP）、里氏替换原则（LSP）、依赖倒置原则（DIP）、接口分离原则（ISP）、最少知识原则（LKP）。  面向对象的好处在于提高">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript面向对象编程">
+<meta property="og:url" content="http://example.com/2023/08/27/JavaScript%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/index.html">
+<meta property="og:site_name" content="谢安の博客">
+<meta property="og:description" content="面向对象是软件开发中的一种方法，现在被广泛使用。面向对象是使用一种抽象的方式来模拟现实世界的编程模式。在面向对象中，我们可以将程序看做一个个对象互相协作的结果。面向对象具有三大特性和六大原则。三大特性是继承、多态和封装。六大原则是单一职责原则（SRP）、开放封闭原则（OCP）、里氏替换原则（LSP）、依赖倒置原则（DIP）、接口分离原则（ISP）、最少知识原则（LKP）。  面向对象的好处在于提高">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://camo.githubusercontent.com/a75b270972965824c553a970d28ba021468c95d7d047d632c45f2a752c5c3318/687474703a2f2f7374617469632e7a7962756c756f2e636f6d2f677979696e2f61757a38626279636a6d717a337174677870396a783477392f696d6167655f31646d6c317363766a316f343833306331636e643175636a31706d67392e706e67">
+<meta property="article:published_time" content="2023-08-27T06:27:38.000Z">
+<meta property="article:modified_time" content="2023-08-27T06:38:04.204Z">
+<meta property="article:author" content="谢安">
+<meta property="article:tag" content="JavaScript">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://camo.githubusercontent.com/a75b270972965824c553a970d28ba021468c95d7d047d632c45f2a752c5c3318/687474703a2f2f7374617469632e7a7962756c756f2e636f6d2f677979696e2f61757a38626279636a6d717a337174677870396a783477392f696d6167655f31646d6c317363766a316f343833306331636e643175636a31706d67392e706e67"><link rel="shortcut icon" href="/img/favicon.jpg"><link rel="canonical" href="http://example.com/2023/08/27/JavaScript%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'JavaScript面向对象编程',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-08-27 14:38:04'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><script src="/js/sakura.js"></script><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-clock/lib/clock.min.css" /><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">49</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">19</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://camo.githubusercontent.com/a75b270972965824c553a970d28ba021468c95d7d047d632c45f2a752c5c3318/687474703a2f2f7374617469632e7a7962756c756f2e636f6d2f677979696e2f61757a38626279636a6d717a337174677870396a783477392f696d6167655f31646d6c317363766a316f343833306331636e643175636a31706d67392e706e67')"><nav id="nav"><span id="blog-info"><a href="/" title="谢安の博客"><span class="site-name">谢安の博客</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">JavaScript面向对象编程</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-08-27T06:27:38.000Z" title="发表于 2023-08-27 14:27:38">2023-08-27</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-08-27T06:38:04.204Z" title="更新于 2023-08-27 14:38:04">2023-08-27</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/JavaScript/">JavaScript</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">4.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>14分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="JavaScript面向对象编程"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><strong>面向对象是软件开发中的一种方法，现在被广泛使用。面向对象是使用一种抽象的方式来模拟现实世界的编程模式。在面向对象中，我们可以将程序看做一个个对象互相协作的结果。</strong><br><strong>面向对象具有三大特性和六大原则。三大特性是继承、多态和封装。六大原则是单一职责原则（SRP）、开放封闭原则（OCP）、里氏替换原则（LSP）、依赖倒置原则（DIP）、接口分离原则（ISP）、最少知识原则（LKP）。</strong></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="https://camo.githubusercontent.com/a75b270972965824c553a970d28ba021468c95d7d047d632c45f2a752c5c3318/687474703a2f2f7374617469632e7a7962756c756f2e636f6d2f677979696e2f61757a38626279636a6d717a337174677870396a783477392f696d6167655f31646d6c317363766a316f343833306331636e643175636a31706d67392e706e67"></p>
+<p><strong>面向对象的好处在于提高了程序开发的灵活性和可维护性，尤其是有利于模块化。</strong></p>
+<h2 id="1-鸭子类型"><a href="#1-鸭子类型" class="headerlink" title="1. 鸭子类型"></a>1. 鸭子类型</h2><p>传统的静态类型语言中，在定义变量的时候就必须声明类型，这样有利于在编译阶段就能避免不必要的错误，但也会增加一些不必要的代码。<br>而在JS这种静态语言，只有在运行的时候才能确定真正的类型，虽然降低了后期的维护性，但也让我们可以更加专注于业务逻辑的编写。<br>所以我们在JS中使用一个对象的时候，完全不必考虑这个对象是否被设计为有这个方法。我们称之为「鸭子类型」。<br>如果一个动物走起路来像鸭子，叫起来也像鸭子，不管它本来是什么，都可以被认为是鸭子。<br>鸭子类型让我们更关注对象的行为和表现，而并非它自身的类型，我们应该更关注接口，而非实现。<br>用代码举个例子可能会更加直观：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">class Duck &#123;</span><br><span class="line">    walk() &#123;</span><br><span class="line">        console.log(&quot;walk!&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    voice() &#123;</span><br><span class="line">        console.log(&quot;voice!&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class Chicken &#123;</span><br><span class="line">    walk() &#123;</span><br><span class="line">        console.log(&quot;walk!&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    voice() &#123;</span><br><span class="line">        console.log(&quot;voice!&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">const duckWalk = (duck) =&gt; &#123;</span><br><span class="line">    duck.walk();</span><br><span class="line">&#125;</span><br><span class="line">const duckVoice = (duck) =&gt; &#123;</span><br><span class="line">    duck.voice();</span><br><span class="line">&#125;</span><br><span class="line">duckWalk(new Duck);</span><br><span class="line">duckWalk(new Chicken);</span><br></pre></td></tr></table></figure>
+
+<p>我们在 <code>duckWalk</code> 方法中，不需要考虑传入的参数 <code>duck</code> 是什么类型，如果它有 方法，那么就可以被当做鸭子。<br>同理，如果一个对象拥有 <code>push</code>、<code>pop</code> 等方法，那么就可以被当做栈来使用。<br>如果是静态类型的语言中，和动态语言实现有什么区别呢？我这里用 TypeScript 来实现一下（没有 TypeScript 经验的童鞋可以跳过）。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">// interface Performs</span><br><span class="line">interface Performs &#123;</span><br><span class="line">    void walk();</span><br><span class="line">    void voice();</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">// class Duck</span><br><span class="line">class Duck implements Performs &#123;</span><br><span class="line">    public walk() &#123;</span><br><span class="line">        console.log(&quot;walk!&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">   public voice() &#123;</span><br><span class="line">        console.log(&quot;voice!&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">// class Chicken</span><br><span class="line">class Chicken implements Performs &#123;</span><br><span class="line">    public walk() &#123;</span><br><span class="line">        console.log(&quot;walk!&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    public voice() &#123;</span><br><span class="line">        console.log(&quot;voice!&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">class MainClass &#123;</span><br><span class="line">    public static inTheForest&lt;T extends Performs&gt; (duck: T) : void &#123;</span><br><span class="line">        duck.walk();</span><br><span class="line">        duck.voice();</span><br><span class="line">    &#125;</span><br><span class="line">   </span><br><span class="line">    constructor() &#123;</span><br><span class="line">         let d: Duck = new Duck();</span><br><span class="line">         let p: Person = new Person();</span><br><span class="line">         MainClass.inTheForest(d);</span><br><span class="line">         MainClass.inTheForest(p);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其实可以看得出来，在 TypeScript 中必须将类型向上进行继承 &#96;Performs 才能实现鸭子类型，这种实现方式比用 JavaScript 会麻烦很多。</p>
+<h2 id="2-接口"><a href="#2-接口" class="headerlink" title="2. 接口"></a>2. 接口</h2><p>上面我们提到了「接口」的概念，那么接口是什么意思呢？<br>接口一般是静态类型语言中的一个概念，比如上面 TypeScript 中的 <code>interface Performs</code> 就是一个接口，但是在 JavaScript 中并没有存在相关实现。</p>
+<p><strong>举个例子，就像我们平时使用的插座一样，插座会提供插座孔给你，你可以根据自己使用的电器的实际情况来选择插到哪个里面。这里的插座孔就是插座暴露给你的接口，具体插到插座孔里面做了什么事情，我们也不知道，也不必关心。</strong><br>当然，我们可以通过 ES6 的继承来模拟接口，接口中定义抽象方法，子类继承后再做具体实现。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">class Animal &#123;</span><br><span class="line">    walk() &#123;&#125;</span><br><span class="line">    voice() &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line">class Chicken extends Animal &#123;</span><br><span class="line">    public walk() &#123;</span><br><span class="line">        console.log(&quot;walk!&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    public voice() &#123;</span><br><span class="line">        console.log(&quot;voice!&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class Duck extends Animal &#123;</span><br><span class="line">    public walk() &#123;</span><br><span class="line">        console.log(&quot;walk!&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">   public voice() &#123;</span><br><span class="line">        console.log(&quot;voice!&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>因此，我们在编写一个程序的时候，应该将定义和实现进行分离，这样两者互不影响。只要实现了接口，那么不管是怎么实现的，我们都不用关心。</p>
+<h2 id="3-三大特性"><a href="#3-三大特性" class="headerlink" title="3. 三大特性"></a>3. 三大特性</h2><h3 id="3-1-封装"><a href="#3-1-封装" class="headerlink" title="3.1 封装"></a>3.1 封装</h3><p>前面我们说过面向对象有三大特性，封装就是其中一种特性。<br>顾名思义，封装就是指隐藏实现的细节，将一些具体的事物封装成抽象的事物。比如我们有一台电脑，我不用知道这台电脑内部的工作原理，但我依然可以用这台电脑访问网页、打游戏等等。<br>如果你想通过 <code>id</code> 来从数据库中查询一条 <code>user</code> 的信息，又不想每次查询都要写一串代码，这个时候就可以封装一个 <code>findUserById</code> 的方法。至于这个 <code>findUserById</code> 是怎么实现的，调用的时候并不用关心，你只需要关心输入和输出就行了。<br>我们可以用代码举个简单例子：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const findUserById = (id) =&gt; &#123;</span><br><span class="line">    // ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>封装的意义在于防止内部数据被篡改或者被破坏。我们可以将数据进行封装，只暴露出方法来对数据进行访问，避免类以外的操作修改数据。我们也可以将方法进行封装，对于使用者来说，不必关心方法实现的细节。只要提供的接口不变，就不会对使用者造成影响</strong>。<br>但是在 JavaScript 中不管是 <code>Object</code> 还是 <code>Class</code> 都还没有实现私有属性，只要是其中的属性，就一定能在类外被访问到，比如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">// Object</span><br><span class="line">const student = &#123;</span><br><span class="line">    _age: 20,</span><br><span class="line">    _sex: &#x27;female&#x27;,</span><br><span class="line">    setAge(newAge) &#123;</span><br><span class="line">        this._age = newAge;</span><br><span class="line">    &#125;,</span><br><span class="line">    getAge() &#123;</span><br><span class="line">        return this._age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">console.log(student._age); // _age虽然是私有变量，但依然能被外界访问。</span><br><span class="line"></span><br><span class="line">// Class</span><br><span class="line">class Student &#123;</span><br><span class="line">    constructor(age, sex) &#123;</span><br><span class="line">        this._age = age;</span><br><span class="line">        this._sex = sex;</span><br><span class="line">    &#125;</span><br><span class="line">    setAge(newAge) &#123;</span><br><span class="line">        this._age = newAge;</span><br><span class="line">    &#125;,</span><br><span class="line">    getAge() &#123;</span><br><span class="line">        return this._age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">const student = new Student(20, &#x27;female&#x27;);</span><br><span class="line">console.log(student._age); // _age虽然是私有变量，但依然能被外界访问。</span><br></pre></td></tr></table></figure>
+
+<p>因此我们可以利用闭包来对这个封装进行改良。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">// 闭包版</span><br><span class="line">const Student = function(age, sex) &#123;</span><br><span class="line">    let _age = age, _sex = sex;</span><br><span class="line">    const setAge = (newAge) =&gt; &#123;</span><br><span class="line">        _age = 20;</span><br><span class="line">    &#125;</span><br><span class="line">    const getAge = () =&gt; &#123;</span><br><span class="line">        return _age;</span><br><span class="line">    &#125;</span><br><span class="line">    return &#123;</span><br><span class="line">        setAge,</span><br><span class="line">        getAge</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">const student = new Student(20, &#x27;female&#x27;);</span><br><span class="line">console.log(student._age); // undefined</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-继承"><a href="#3-2-继承" class="headerlink" title="3.2 继承"></a>3.2 继承</h3><p>继承是指可以在不编写更多代码的情况下，一个类可以使用另一个类上的属性或者方法。甚至父类可以只提供接口，让子类去实现。<br>一般来说，继承的类叫做「子类」或者「派生类」，而被继承的类叫做「父类」或者「超类」。<br><strong>继承的好处在于可以将复用代码，无需将相同的功能写多次。</strong><br>我们以 ES6 的 <code>extends</code> 关键字来一窥究竟。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">class Animal &#123;</span><br><span class="line">    walk() &#123;</span><br><span class="line">        console.log(`the $&#123;this.name&#125; walks`);</span><br><span class="line">    &#125;</span><br><span class="line">    eat() &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line">class Duck extends Animal &#123;</span><br><span class="line">    name = &#x27;duck&#x27;</span><br><span class="line">    eat() &#123;</span><br><span class="line">        console.log(&quot;duck eats fish&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class Cat extends Animal &#123;</span><br><span class="line">    name = &#x27;cat&#x27;</span><br><span class="line">    eat() &#123;</span><br><span class="line">        console.log(&quot;cat eats mice&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">const duck = new Duck();</span><br><span class="line">duck.eat(); // 父类只提供了eat的接口，需要子类自己去实现</span><br><span class="line">duck.walk(); // 即使Duck类上没有walk方法，依然可以从父类中调用。</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-3-多态"><a href="#3-3-多态" class="headerlink" title="3.3 多态"></a>3.3 多态</h3><p>按照字面意思来理解，多态就是「多种状态」。在 OOP 语言中，接口的不同实现即为多态。<br>也许上面的解释让你还不容易理解，我们可以举个例子。</p>
+<p><em><strong>从前有个动物王国，每年都会举行一次赛跑，所有小动物都可以参加。当裁判大喊开始之后，小动物们纷纷开始跑向终点。兔子用矫捷的四肢飞快地跑去；袋鼠用健壮的两条腿向终点跳去；鸭子也用两条短腿踉踉跄跄地往前跑。</strong></em></p>
+<p>对于裁判来说，他只下达了「跑」的命令，但是不同小动物有自己的奔跑方式。<br>因此，我们上面关于继承的 <code>eat</code> 方法的实现也是多态的一种。<br>多态的实现一般是重载和重写两种方式。<br>重载的意思就是利用传给函数的参数类型、个数等来进行判断加载不同的函数。但是在 JavaScript 中，并没有对函数参数进行约束，因此不管传多少个参数都不会有区别，因此这里不会对重载进行讨论。<br>这里主要讨论的是重写。重写的意思就是对父类中的同名方法进行重写，以实现覆盖的功能。由于 JavaScript 中会通过原型链一层层往上查找属性和方法，因此完全可以做到重写。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class Animal &#123;</span><br><span class="line">    eat() &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line">class Duck extends Animal &#123;</span><br><span class="line">    eat() &#123;</span><br><span class="line">        console.log(&quot;duck eats fish&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class Cat extends Animal &#123;</span><br><span class="line">    eat() &#123;</span><br><span class="line">        console.log(&quot;cat eats mice&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">const duck = new Duck();</span><br><span class="line">duck.eat(); // Duck类中对eat方法进行了重写</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-六大原则"><a href="#4-六大原则" class="headerlink" title="4. 六大原则"></a>4. 六大原则</h2><h3 id="4-1-单一职责原则"><a href="#4-1-单一职责原则" class="headerlink" title="4.1 单一职责原则"></a>4.1 单一职责原则</h3><p>单一职责的描述如下：</p>
+<p><em><strong>A class should have only one reason to change</strong></em><br><em><strong>类发生更改的原因应该只有一个</strong></em></p>
+<p>引申一下，不仅仅是类，一个对象、一个方法也只应该做一件事。</p>
+<p>*<strong>问题由来：</strong><br>如果有个类 A，负责两个不同职责 P1，P2，一旦其中一个职责 P1 因需求发生变动需要修改，就有可能会导致原本运行正常的职责 P2 功能发生故障。<br>*<strong>解决方式：</strong><br>最好的方式就是对每个职责建立一个类，这样修改 P1 就不会影响到原来的 P2 。</p>
+<p>*<strong>单一职责的优点：</strong><br>1.降低类的复杂度，一个类只负责一个职责。</p>
+<p>2.提高类的可读性，提高系统的可维护性。</p>
+<p>3.降低变更引起的风险。</p>
+<p>*<strong>单一职责的缺点：</strong><br>一个职责对应一个类，可能会给系统带来不必要的负担。<br>因此，可以在适当的场景下违反单一职责原则。</p>
+<h3 id="4-2-开放封闭原则"><a href="#4-2-开放封闭原则" class="headerlink" title="4.2 开放封闭原则"></a>4.2 开放封闭原则</h3><p>*<strong>定义：</strong><br>一个软件实体如类、模块和函数应该对扩展开放，对修改关闭。<br><strong><em>问题由来：</em>*<br>在维护项目的时候，经常会出现需求让我们在原有功能的基础上增加新功能，如果在直接在原来的代码中直接修改，可能会不小心给原有代码引入错误，也可能会让我们不得不对整个功能重构，也有可能会造成原有代码需要重新测试。<br>*<strong>解决方式：</strong><br>尽量使用扩展的方式，而不是直接在原有的代码中修改。<br>*** 例子：</strong><br>假如有一批书，在双十一这天要打折，金额大于40块的打9折，金额大于50块的打8折，其他的不打折。<br>也许你会想到，可以直接修改书的价格啊？可如果双十一过去后，书全部恢复原价呢？<br>对于这种情况，可以在 <code>Book</code> 类的基础之上，增加了一个子类 <code>OffNovelBook</code>，重写了 <code>getPrice</code> 方法，相当于对 <code>getPrice</code> 方法进行了扩展。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">class Book &#123;</span><br><span class="line">    getPrice() &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class OffNovelBook extends Book &#123;</span><br><span class="line">    getPrice() &#123;</span><br><span class="line">        const price = super.getPrice();</span><br><span class="line">        if (price &gt;= 500) &#123;</span><br><span class="line">            return price * 0.8;</span><br><span class="line">        &#125;</span><br><span class="line">        if (price &gt;= 400) &#123;</span><br><span class="line">            return price * 0.9;</span><br><span class="line">        &#125;</span><br><span class="line">        return price;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="4-3-里氏替换原则"><a href="#4-3-里氏替换原则" class="headerlink" title="4.3 里氏替换原则"></a>4.3 里氏替换原则</h3><p>*<strong>定义：</strong><br>所有引用基类的地方必须能透明地使用其子类的对象。<br>通俗点讲，只要父类出现的地方子类都能出现，且用子类替换父类也不会出现错误，对于使用者来说不需要关心是子类还是父类。但是反过来就不行了，父类未必能替换子类。<br>*<strong>规范：</strong><br>里氏替换原则一般是为继承定义规范，使用继承的时候需要遵守下面几个规范：</p>
+<ol>
+<li>子类需要实现父类的方法</li>
+<li>子类可以有自己的特性</li>
+<li>覆盖或实现父类的方法时输入参数可以被放大</li>
+<li>覆写或实现父类的方法时输出结果可以被缩小</li>
+</ol>
+<blockquote>
+<p>如果有一个禽类的类，派生出来鸡和麻雀两个类。大家都知道禽类会下蛋，把这个禽类换成鸡和麻雀也没问题。可你说麻雀会飞，能换成禽类会飞吗？事实上鸵鸟和鸡都不会飞。</p>
+</blockquote>
+<h3 id="4-4-依赖倒置原则"><a href="#4-4-依赖倒置原则" class="headerlink" title="4.4 依赖倒置原则"></a>4.4 依赖倒置原则</h3><p>*<strong>定义：</strong><br>依赖倒置原则（Dependence Inversion Principle）是程序要依赖于抽象接口，不要依赖于具体实现。简单的说就是要求对抽象进行编程，不要对实现进行编程，这样就降低了客户与实现模块间的耦合。<br>更简单地说，就是面向接口编程。<br>*<strong>规范：</strong></p>
+<ol>
+<li>每个类尽量提供接口或抽象类，或者两者都具备。</li>
+<li>变量的声明类型尽量是接口或者是抽象类。</li>
+<li>任何类都不应该从具体类派生。</li>
+<li>使用继承时尽量遵循里氏替换原则。</li>
+</ol>
+<p>由于 JavaScript 中没有接口的概念，这里会用 TypeScript 进行讲解，如果 TypeScript 经验的同学可以跳过这段。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class Taobao &#123;</span><br><span class="line">    sell() &#123;</span><br><span class="line">        console.log(&#x27;淘宝购物&#x27;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class Customer &#123;</span><br><span class="line">    shopping(shop: Taobao) &#123;</span><br><span class="line">        shop.sell();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">const customer = new Customer();</span><br><span class="line">customer.shopping(new Taobao());</span><br></pre></td></tr></table></figure>
+
+<p>如果顾客想要从京东购买呢？你会想到直接修改 <code>shopping</code> 函数。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class JD &#123;</span><br><span class="line">    sell() &#123;</span><br><span class="line">        console.log(&#x27;京东购物&#x27;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class Customer &#123;</span><br><span class="line">    shopping(shop: JD) &#123;</span><br><span class="line">        shop.sell();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">const customer = new Customer();</span><br><span class="line">customer.shopping(new JD());</span><br></pre></td></tr></table></figure>
+
+<p>可是这样不是违反了前面讲过的开闭原则吗？可再到 <code>Customer</code> 类上增加一个方法也会显得多余。<br>因此这里的 <code>shop</code> 参数应该更加抽象，而不是依赖具体实现。<code>Taobao</code> 和 <code>JD</code> 应该基于接口 <code>IShop</code> 来创建。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">interface IShop &#123;</span><br><span class="line">    sell(): void</span><br><span class="line">&#125;</span><br><span class="line">class Taobao implements IShop &#123;</span><br><span class="line">    sell() &#123;</span><br><span class="line">        console.log(&#x27;淘宝购物&#x27;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class JD implements IShop &#123;</span><br><span class="line">    sell() &#123;</span><br><span class="line">        console.log(&#x27;京东购物&#x27;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class Customer &#123;</span><br><span class="line">    shopping(shop: IShop) &#123;</span><br><span class="line">        shop.sell();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">const customer = new Customer();</span><br><span class="line">customer.shopping(new Taobao());</span><br><span class="line">customer.shopping(new JD());</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="4-5-接口分离原则"><a href="#4-5-接口分离原则" class="headerlink" title="4.5 接口分离原则"></a>4.5 接口分离原则</h3><p>*<strong>定义：</strong><br>接口分离原则指在设计时采用多个与特定客户类有关的接口比采用一个通用的接口要好。即，一个类要给多个客户使用，那么可以为每个客户创建一个接口，然后这个类实现所有的接口；而不要只创建一个接口，其中包含所有客户类需要的方法，然后这个类实现这个接口。<br>简单来说就是一个类不应该依赖于它不需要的方法，比如我们有个 <code>IPerson</code> 接口，它拥有这么几个方法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">interface IPerson &#123;</span><br><span class="line">    walk(): void;</span><br><span class="line">    say(): void;</span><br><span class="line">    look(): void;</span><br><span class="line">&#125;</span><br><span class="line">class Person implements IPerson &#123;</span><br><span class="line">    walk() &#123;&#125;</span><br><span class="line">    say() &#123;&#125;</span><br><span class="line">    look() &#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>可是对于残疾人来说，盲人不能看、下肢瘫痪的不能走、哑巴不能说话，如果他们还拥有这些方法，似乎就很奇怪。<br>因此，应该将接口隔离，使用多个类</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">interface IWalk &#123;</span><br><span class="line">    walk(): void;</span><br><span class="line">&#125;</span><br><span class="line">interface ILook &#123;</span><br><span class="line">    look(): void;</span><br><span class="line">&#125;</span><br><span class="line">interface ISay &#123;</span><br><span class="line">    say(): void;</span><br><span class="line">&#125;</span><br><span class="line">interface IPerson extends IWalk, ILook, ISay &#123;&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>*<strong>接口隔离和单一职责的区别：</strong><br>接口隔离原则强调的是设计时的架构分离，把不同功能分给不同的接口，让实现类避免少了解与己无关的方法、通过实现不同接口保证与外部的耦合； 单一职责原则强调的是 实现时的职责分离，具体功能下的不同实现要封装在不同的模块，尽量避免牵一发而动全身。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这节课介绍了面向对象的相关概念，尤其是继承和封装在开发中使用的比例非常大。<br>通过面向对象的形式来实现业务功能的模块化，这样有利于提高系统的可维护性和复用性。<br>但也不是所有场景都适合使用面向对象，我们应该根据场景来合理使用。在一些简单的场景下，如果还使用面向对象来创造很多类，无疑也会加大内存开销，这种情况下用面向过程已经足够了。</p>
+<p>具体内容出自<a target="_blank" rel="noopener" href="https://github.com/yinguangyao/blog/issues/62">JavaScript 面向对象编程 · Issue #62 · yinguangyao&#x2F;blog (github.com)</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">谢安</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2023/08/27/JavaScript%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/">http://example.com/2023/08/27/JavaScript%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">谢安の博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/JavaScript/">JavaScript</a></div><div class="post_share"><div class="social-share" data-image="https://camo.githubusercontent.com/a75b270972965824c553a970d28ba021468c95d7d047d632c45f2a752c5c3318/687474703a2f2f7374617469632e7a7962756c756f2e636f6d2f677979696e2f61757a38626279636a6d717a337174677870396a783477392f696d6167655f31646d6c317363766a316f343833306331636e643175636a31706d67392e706e67" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="/img/wechat.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="/img/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2023/08/27/React%E8%84%9A%E6%89%8B%E6%9E%B6%E7%9A%84%E6%90%AD%E5%BB%BA%E4%B8%8E%E4%BD%BF%E7%94%A8/" title="React脚手架的搭建与使用"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="https://img-blog.csdnimg.cn/48c954f70f7d42de9f51c66082aa3fbf.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">React脚手架的搭建与使用</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="comment-switch"><span class="first-comment">Valine</span><span class="switch-btn"></span><span class="second-comment">Disqus</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div><div><div id="disqus_thread"></div></div><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">谢安</div><div class="author-info__description">让子弹飞一会儿</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">49</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">19</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://haiyong.site/moyu/"><i class="iconfont icon-youxishoubing"></i><span>摸鱼</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content"><p align="center">微信号：O99776161</p> <p align="center">QQ号：3114921075</p></div></div><div class="card-widget" id="newYear"><div class="item-headline"><i></i><span></span></div><div class="item-content"><div id="newYear-main"><div class="mask"></div> <p class="title"></p> <div class="newYear-time"></div> <p class="today" style="text-align: right;"></p> </div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E9%B8%AD%E5%AD%90%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">1. 鸭子类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%8E%A5%E5%8F%A3"><span class="toc-number">2.</span> <span class="toc-text">2. 接口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7"><span class="toc-number">3.</span> <span class="toc-text">3. 三大特性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E5%B0%81%E8%A3%85"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 封装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E7%BB%A7%E6%89%BF"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 继承</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E5%A4%9A%E6%80%81"><span class="toc-number">3.3.</span> <span class="toc-text">3.3 多态</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%85%AD%E5%A4%A7%E5%8E%9F%E5%88%99"><span class="toc-number">4.</span> <span class="toc-text">4. 六大原则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E5%8D%95%E4%B8%80%E8%81%8C%E8%B4%A3%E5%8E%9F%E5%88%99"><span class="toc-number">4.1.</span> <span class="toc-text">4.1 单一职责原则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E5%BC%80%E6%94%BE%E5%B0%81%E9%97%AD%E5%8E%9F%E5%88%99"><span class="toc-number">4.2.</span> <span class="toc-text">4.2 开放封闭原则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-%E9%87%8C%E6%B0%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99"><span class="toc-number">4.3.</span> <span class="toc-text">4.3 里氏替换原则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-%E4%BE%9D%E8%B5%96%E5%80%92%E7%BD%AE%E5%8E%9F%E5%88%99"><span class="toc-number">4.4.</span> <span class="toc-text">4.4 依赖倒置原则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5-%E6%8E%A5%E5%8F%A3%E5%88%86%E7%A6%BB%E5%8E%9F%E5%88%99"><span class="toc-number">4.5.</span> <span class="toc-text">4.5 接口分离原则</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">5.</span> <span class="toc-text">总结</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/08/27/JavaScript%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/" title="JavaScript面向对象编程"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="https://camo.githubusercontent.com/a75b270972965824c553a970d28ba021468c95d7d047d632c45f2a752c5c3318/687474703a2f2f7374617469632e7a7962756c756f2e636f6d2f677979696e2f61757a38626279636a6d717a337174677870396a783477392f696d6167655f31646d6c317363766a316f343833306331636e643175636a31706d67392e706e67" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JavaScript面向对象编程"/></a><div class="content"><a class="title" href="/2023/08/27/JavaScript%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/" title="JavaScript面向对象编程">JavaScript面向对象编程</a><time datetime="2023-08-27T06:27:38.000Z" title="发表于 2023-08-27 14:27:38">2023-08-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/08/27/React%E8%84%9A%E6%89%8B%E6%9E%B6%E7%9A%84%E6%90%AD%E5%BB%BA%E4%B8%8E%E4%BD%BF%E7%94%A8/" title="React脚手架的搭建与使用"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="https://img-blog.csdnimg.cn/48c954f70f7d42de9f51c66082aa3fbf.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="React脚手架的搭建与使用"/></a><div class="content"><a class="title" href="/2023/08/27/React%E8%84%9A%E6%89%8B%E6%9E%B6%E7%9A%84%E6%90%AD%E5%BB%BA%E4%B8%8E%E4%BD%BF%E7%94%A8/" title="React脚手架的搭建与使用">React脚手架的搭建与使用</a><time datetime="2023-08-27T05:52:37.000Z" title="发表于 2023-08-27 13:52:37">2023-08-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/08/23/Edge%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8B%E8%BD%BD%E6%8F%92%E4%BB%B6%E4%B8%80%E7%9B%B4%E5%A4%B1%E8%B4%A5%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" title="Edge浏览器下载插件一直失败解决办法"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="https://pica.zhimg.com/80/v2-fe82f4a48997820a495f6d7842d08136_1440w.webp?source=1940ef5c" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Edge浏览器下载插件一直失败解决办法"/></a><div class="content"><a class="title" href="/2023/08/23/Edge%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8B%E8%BD%BD%E6%8F%92%E4%BB%B6%E4%B8%80%E7%9B%B4%E5%A4%B1%E8%B4%A5%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" title="Edge浏览器下载插件一直失败解决办法">Edge浏览器下载插件一直失败解决办法</a><time datetime="2023-08-23T04:28:07.000Z" title="发表于 2023-08-23 12:28:07">2023-08-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/08/14/%E4%BB%80%E4%B9%88%E6%98%AFdll%E6%96%87%E4%BB%B6/" title="什么是dll文件"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="https://img-blog.csdnimg.cn/img_convert/b5dda14bd13f75b5c381360f3e3ce9e4.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="什么是dll文件"/></a><div class="content"><a class="title" href="/2023/08/14/%E4%BB%80%E4%B9%88%E6%98%AFdll%E6%96%87%E4%BB%B6/" title="什么是dll文件">什么是dll文件</a><time datetime="2023-08-14T14:29:42.000Z" title="发表于 2023-08-14 22:29:42">2023-08-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/19/%E8%AF%B4%E8%AF%B4%E8%BF%9B%E5%8E%82%E5%90%A7/" title="说说进厂吧"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="https://p2.qhimg.com/bdm/1024_768_85/t0165af99d5c2901ad6.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="说说进厂吧"/></a><div class="content"><a class="title" href="/2023/07/19/%E8%AF%B4%E8%AF%B4%E8%BF%9B%E5%8E%82%E5%90%A7/" title="说说进厂吧">说说进厂吧</a><time datetime="2023-07-19T03:19:24.167Z" title="发表于 2023-07-19 11:19:24">2023-07-19</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://camo.githubusercontent.com/a75b270972965824c553a970d28ba021468c95d7d047d632c45f2a752c5c3318/687474703a2f2f7374617469632e7a7962756c756f2e636f6d2f677979696e2f61757a38626279636a6d717a337174677870396a783477392f696d6167655f31646d6c317363766a316f343833306331636e643175636a31706d67392e706e67')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023  <i id="heartbeat" class="fa fas fa-heartbeat"></i> 谢安</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div><link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css"></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '',
+      appKey: '',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script>function loadDisqus () {
+  var disqus_config = function () {
+    this.page.url = 'http://example.com/2023/08/27/JavaScript%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/'
+    this.page.identifier = '/2023/08/27/JavaScript%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/'
+    this.page.title = 'JavaScript面向对象编程'
+  };
+
+  window.disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+
+  document.getElementById('darkmode').addEventListener('click', () => {
+    setTimeout(() => window.disqusReset(), 200)
+  })
+}
+
+if ('Valine' === 'Disqus' || !true) {
+  if (true) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script><script>function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk(Object.assign({
+      clientID: '1edcf51120d78d14fafb',
+      clientSecret: '2709738244ad1c73a3a9b17383995bc4fe983c89',
+      repo: 'pinglun',
+      owner: '',
+      admin: [''],
+      id: '60be86d7ef4ed6d0672bea86db73dbe6',
+      updateCountCallback: commentCount
+    },))
+
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    getCSS('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css')
+    getScript('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Valine' === 'Gitalk' || !true) {
+  if (true) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div><div class="aplayer no-destroy" data-id="4010201" data-server="netease" data-type="song" data-fixed="true" data-autoplay="true"> </div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+    function butterfly_categories_card_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<style>li.categoryBar-list-item{width:32.3%;}.categoryBar-list{max-height: 190px;overflow:auto;}.categoryBar-list::-webkit-scrollbar{width:0!important}@media screen and (max-width: 650px){.categoryBar-list{max-height: 160px;}}</style><div class="recent-post-item" style="height:auto;width:100%;padding:0px;"><div id="categoryBar"><ul class="categoryBar-list"><li class="categoryBar-list-item" style="background:url(https://assets.akilar.top/image/cover1.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/原理/&quot;);" href="javascript:void(0);">原理</a><span class="categoryBar-list-count">4</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://assets.akilar.top/image/cover2.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/hexo/&quot;);" href="javascript:void(0);">hexo</a><span class="categoryBar-list-count">3</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://assets.akilar.top/image/cover3.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/解决办法/&quot;);" href="javascript:void(0);">解决办法</a><span class="categoryBar-list-count">14</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://assets.akilar.top/image/cover4.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/书籍/&quot;);" href="javascript:void(0);">书籍</a><span class="categoryBar-list-count">3</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://assets.akilar.top/image/cover5.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/美剧/&quot;);" href="javascript:void(0);">美剧</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://assets.akilar.top/image/cover6.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/选购指南/&quot;);" href="javascript:void(0);">选购指南</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/MySQL/&quot;);" href="javascript:void(0);">MySQL</a><span class="categoryBar-list-count">3</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/软件/&quot;);" href="javascript:void(0);">软件</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/IDEA/&quot;);" href="javascript:void(0);">IDEA</a><span class="categoryBar-list-count">4</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Gitee/&quot;);" href="javascript:void(0);">Gitee</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/GitHub/&quot;);" href="javascript:void(0);">GitHub</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Vue/&quot;);" href="javascript:void(0);">Vue</a><span class="categoryBar-list-count">2</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/前端小游戏/&quot;);" href="javascript:void(0);">前端小游戏</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Java/&quot;);" href="javascript:void(0);">Java</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/计算机基础/&quot;);" href="javascript:void(0);">计算机基础</a><span class="categoryBar-list-count">4</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Apache/&quot;);" href="javascript:void(0);">Apache</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/随想录/&quot;);" href="javascript:void(0);">随想录</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/React/&quot;);" href="javascript:void(0);">React</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/JavaScript/&quot;);" href="javascript:void(0);">JavaScript</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li></ul></div></div>';
+      console.log('已挂载butterfly_categories_card')
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      }
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    butterfly_categories_card_injector_config()
+    }
+  </script><script data-pjax>
+  function butterfly_clock_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="https://npm.elemecdn.com/hexo-butterfly-clock/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_injector_config();
+  }
+  </script><script src="https://pv.sohu.com/cityjson?ie=utf-8"></script><script data-pjax src="https://npm.elemecdn.com/hexo-butterfly-clock/lib/clock.min.js"></script><script data-pjax>
+  function butterfly_clock_anzhiyu_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="https://npm.elemecdn.com/hexo-butterfly-clock/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock_anzhiyu')
+    if(parent_div_git) {
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var qweather_key = 'b16a1fa0e63c46a4b8f28abfb06ae3fe';
+  var gaud_map_key = 'e2b04289e870b005374ee030148d64fd&s=rsv3';
+  var baidu_ak_key = 'undefined';
+  var flag = 0;
+  var clock_rectangle = '112.6534116,27.96920845';
+  var clock_default_rectangle_enable = 'false';
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  </script><script data-pjax>
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/03/22/Hexo-butterfly添加樱花动态效果背景/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="https://ts1.cn.mm.bing.net/th/id/R-C.fad21c0f37493382d44104011a85c1d1?rik=LLDab1WYCxDY1g&amp;riu=http%3a%2f%2fimg.mm4000.com%2ffile%2f3%2f70%2f8c8237035e.jpg&amp;ehk=h1vclPHGSaz7IKF5deFEAWXE2RyqM2Ia0VwgcWc7p98%3d&amp;risl=&amp;pid=ImgRaw&amp;r=0" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-03-22</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/03/22/Hexo-butterfly添加樱花动态效果背景/&quot;);" href="javascript:void(0);" alt="">Hexo-butterfly添加樱花动态效果背景~</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/03/22/Hexo-butterfly添加樱花动态效果背景/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/03/19/我的第一篇文章/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="https://p6.qhimg.com/bdm/1024_768_85/t01910270b46673d777.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-03-19</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/03/19/我的第一篇文章/&quot;);" href="javascript:void(0);" alt="">Hexo搭建博客的底层原理</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/03/19/我的第一篇文章/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js"></script><script defer data-pjax src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper_init.js"></script><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '2s');
+    arr[i].setAttribute('data-wow-delay', '1s');
+    arr[i].setAttribute('data-wow-offset', '100');
+    arr[i].setAttribute('data-wow-iteration', '2');
+  }</script><script async="async">var arr = document.getElementsByClassName('card-widget');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script></div><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow_init.js"></script><!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300,"hOffset":20,"vOffset":-20},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/"});</script>
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n||document.documentElement.clientHeight*n)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script></body></html>
