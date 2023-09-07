@@ -1,0 +1,1152 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>JAVA - 简单记事本 | 谢安の博客</title><meta name="author" content="谢安"><meta name="copyright" content="谢安"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="referrer" content="no-referrer"><meta name="description" content="主要用到java.awt.*、java.swing.*、java.io.*这三个包，一共写了两个，第二个是最开始写的，我也发上来大家学习了。还是很费脑筋的，记事本该有的功能都差不多有了。 第一个截图：  代码收好： import java.awt.BorderLayout; import java.awt.Color; import java.awt.Dimension; import java.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA - 简单记事本">
+<meta property="og:url" content="http://example.com/2023/09/07/JAVA-%E7%AE%80%E5%8D%95%E8%AE%B0%E4%BA%8B%E6%9C%AC/index.html">
+<meta property="og:site_name" content="谢安の博客">
+<meta property="og:description" content="主要用到java.awt.*、java.swing.*、java.io.*这三个包，一共写了两个，第二个是最开始写的，我也发上来大家学习了。还是很费脑筋的，记事本该有的功能都差不多有了。 第一个截图：  代码收好： import java.awt.BorderLayout; import java.awt.Color; import java.awt.Dimension; import java.">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2019121810082198.png?x-oss-process&#61;image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly90aGlua3dvbi5ibG9nLmNzZG4ubmV0,size_16,color_FFFFFF,t_70">
+<meta property="article:published_time" content="2023-09-07T05:16:40.000Z">
+<meta property="article:modified_time" content="2023-09-07T05:21:15.111Z">
+<meta property="article:author" content="谢安">
+<meta property="article:tag" content="JAVA">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/2019121810082198.png?x-oss-process&#61;image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly90aGlua3dvbi5ibG9nLmNzZG4ubmV0,size_16,color_FFFFFF,t_70"><link rel="shortcut icon" href="/img/favicon.jpg"><link rel="canonical" href="http://example.com/2023/09/07/JAVA-%E7%AE%80%E5%8D%95%E8%AE%B0%E4%BA%8B%E6%9C%AC/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'JAVA - 简单记事本',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-09-07 13:21:15'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><script src="/js/sakura.js"></script><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-clock/lib/clock.min.css" /><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">62</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">28</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">29</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://img-blog.csdnimg.cn/2019121810082198.png?x-oss-process&amp;#61;image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly90aGlua3dvbi5ibG9nLmNzZG4ubmV0,size_16,color_FFFFFF,t_70')"><nav id="nav"><span id="blog-info"><a href="/" title="谢安の博客"><span class="site-name">谢安の博客</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">JAVA - 简单记事本</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-09-07T05:16:40.000Z" title="发表于 2023-09-07 13:16:40">2023-09-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-09-07T05:21:15.111Z" title="更新于 2023-09-07 13:21:15">2023-09-07</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/JAVA/">JAVA</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3.8k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>20分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="JAVA - 简单记事本"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>主要用到java.awt.*、java.swing.*、java.io.*这三个包，一共写了两个，第二个是最开始写的，我也发上来大家学习了。<br>还是很费脑筋的，记事本该有的功能都差不多有了。</p>
+<p>第一个截图：</p>
+<p><a target="_blank" rel="noopener" href="http://notemi.cn/usr/uploads/2015/06/84891161.png"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="http://notemi.cn/usr/uploads/2015/06/84891161.png" alt="JAVA - 简单记事本"></a></p>
+<p>代码收好：</p>
+<pre><code>import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.GraphicsEnvironment;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import javax.swing.ButtonGroup;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JCheckBoxMenuItem;
+import javax.swing.JColorChooser;
+import javax.swing.JComboBox;
+import javax.swing.JDialog;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JPopupMenu;
+import javax.swing.JRadioButton;
+import javax.swing.JRadioButtonMenuItem;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.JToolBar;
+import javax.swing.KeyStroke;
+import javax.swing.WindowConstants;
+@SuppressWarnings(&quot;serial&quot;)
+public class Test extends JFrame &#123;
+    // 添加属性
+    private JComboBox combox_name, combox_size;// 字体、字号组合框
+    private JButton button_larger,button_smaller,button_color;//字体变大变小和颜色选择器
+    private JCheckBox checkb_bold, checkb_italic;// 粗体、斜体复选框
+    private JPopupMenu popupmenu;
+    private JTextArea ta = new JTextArea();
+    private JScrollPane sp = new JScrollPane(ta);
+    //查找对话框属性
+    private JTextField tf_search;
+    private JButton button_next;
+    //
+    private int key=0;
+    public Test(String str) &#123;
+        super(str);
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        Dimension dim = getToolkit().getScreenSize(); // 获得屏幕分辨率
+        this.setBounds(dim.width / 4, dim.height / 4, 700, 480);
+        JToolBar toolbar = new JToolBar(); // 创建工具栏
+        this.add(toolbar, BorderLayout.NORTH); // 工具栏添加到窗格北部
+        this.add(sp);
+        ta.setLineWrap(true);// 换行
+        //////////////////字体
+        GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+        String[] fontsName = ge.getAvailableFontFamilyNames(); // 获得系统字体
+        combox_name = new JComboBox(fontsName);
+        toolbar.add(combox_name);
+        combox_name.addActionListener(new ActionListener() &#123;// 字号
+            public void actionPerformed(ActionEvent e) &#123;
+                String fontname = (String)combox_name.getSelectedItem();//获得字体名
+                Font font = ta.getFont();     //获得文本区的当前字体对象
+                int style = font.getStyle();      //获得字形
+                int size = font.getSize();
+                ta.setFont(new Font(fontname, style, size));
+            &#125;
+        &#125;);
+        /////////////////字号
+        String sizestr[] = &#123; &quot;20&quot;, &quot;30&quot;, &quot;40&quot;, &quot;50&quot;, &quot;60&quot;, &quot;70&quot; ,&quot;80&quot;,&quot;90&quot;,&quot;100&quot;&#125;;
+        combox_size = new JComboBox(sizestr);
+        combox_size.setEditable(true);
+        toolbar.add(combox_size);
+        combox_size.addActionListener(new ActionListener() &#123;// 字号
+            public void actionPerformed(ActionEvent e) &#123;
+                String fontname = (String)combox_name.getSelectedItem();//获得字体名
+                int size = Integer.parseInt((String)combox_size.getSelectedItem());
+                Font font = ta.getFont();     //获得文本区的当前字体对象
+                int style = font.getStyle();      //获得字形
+                ta.setFont(new Font(fontname, style, size));
+            &#125;
+        &#125;);
+        ////////////////////字号加减按钮
+        button_larger=new JButton(&quot;A+&quot;);
+        toolbar.add(button_larger);
+        button_larger.addActionListener(new ActionListener() &#123;
+            public void actionPerformed(ActionEvent e) &#123;
+                String fontname = (String)combox_name.getSelectedItem();//获得字体名
+                Font font = ta.getFont();     //获得文本区的当前字体对象
+                int style = font.getStyle();      //获得字形
+                int size = font.getSize()+5;
+                ta.setFont(new Font(fontname, style, size));
+            &#125;
+        &#125;);
+        button_smaller=new JButton(&quot;A-&quot;);
+        toolbar.add(button_smaller);
+        button_smaller.addActionListener(new ActionListener() &#123;
+            public void actionPerformed(ActionEvent e) &#123;
+                String fontname = (String)combox_name.getSelectedItem();//获得字体名
+                Font font = ta.getFont();     //获得文本区的当前字体对象
+                int style = font.getStyle();      //获得字形
+                int size = font.getSize()-5;
+                ta.setFont(new Font(fontname, style, size));
+            &#125;
+        &#125;);
+        /////////////////J
+        /////////////////粗体和斜体
+        checkb_bold = new JCheckBox(&quot;粗体&quot;); //字形复选框
+        toolbar.add(checkb_bold);
+        checkb_bold.addActionListener(new ActionListener() &#123;
+            public void actionPerformed(ActionEvent e) &#123;
+                String fontname = (String)combox_name.getSelectedItem();//获得字体名
+                Font font = ta.getFont();     //获得文本区的当前字体对象
+                int style = font.getStyle();      //获得字形
+                int size = font.getSize();
+                style = style ^ 1;
+                ta.setFont(new Font(fontname, style, size));
+            &#125;
+        &#125;);
+        checkb_italic = new JCheckBox(&quot;斜体&quot;);
+        toolbar.add(checkb_italic);
+        checkb_italic.addActionListener(new ActionListener() &#123;
+            public void actionPerformed(ActionEvent e) &#123;
+                String fontname = (String)combox_name.getSelectedItem();//获得字体名
+                Font font = ta.getFont();     //获得文本区的当前字体对象
+                int style = font.getStyle();      //获得字形
+                int size = font.getSize();
+                style = style ^ 2;
+                ta.setFont(new Font(fontname, style, size));
+            &#125;
+        &#125;);
+        ////////////////
+        JRadioButton radiob_color[];
+        String colorstr[]=&#123;&quot;红&quot;,&quot;绿&quot;,&quot;蓝&quot;&#125;;
+        ButtonGroup bgroup_color = new ButtonGroup();      //按钮组
+        radiob_color = new JRadioButton[colorstr.length];  //颜色单选按钮数组
+        for (int i=0; i&lt;radiob_color.length; i++)&#123;
+            radiob_color[i]=new JRadioButton(colorstr[i]); 
+            bgroup_color.add(radiob_color[i]); //添加到按钮组
+            toolbar.add(radiob_color[i]);     //添加到工具栏
+        &#125;        
+        radiob_color[0].addActionListener(new ActionListener() &#123;
+            public void actionPerformed(ActionEvent e) &#123;
+                ta.setForeground(Color.red);// 设置颜色
+            &#125;
+        &#125;);
+        radiob_color[1].addActionListener(new ActionListener() &#123;
+            public void actionPerformed(ActionEvent e) &#123;
+                ta.setForeground(Color.green);
+            &#125;
+        &#125;);
+        radiob_color[2].addActionListener(new ActionListener() &#123;
+            public void actionPerformed(ActionEvent e) &#123;
+                ta.setForeground(Color.blue);
+            &#125;
+        &#125;);
+        ///////////////颜色选择器
+        button_color=new JButton(&quot;其他&quot;);
+        toolbar.add(button_color);
+        button_color.addActionListener(new ActionListener() &#123;
+            public void actionPerformed(ActionEvent e) &#123;
+                Color color;
+                color=JColorChooser.showDialog(Test.this,&quot;颜色选择&quot;, Color.black);
+                ta.setForeground(color);// 设置颜色
+            &#125;
+        &#125;);
+        ////////////////鼠标事件
+        ta.addMouseListener(new MouseAdapter() &#123;// 鼠标事件处理方法，右击弹出菜单
+            public void mouseClicked(MouseEvent e) &#123;
+                if (e.getModifiers() == MouseEvent.BUTTON3_MASK) // 单击的是鼠标右键
+                    popupmenu.show(ta, e.getX(), e.getY()); // 在鼠标单击处显示快捷菜单
+            &#125;
+        &#125;);
+        ////////////////
+        this.addmyMenu();       //调用自定义方法，添加菜单
+        this.setVisible(true);
+    &#125;
+    private void addmyMenu() &#123;// 添加主菜单、快捷菜单、对话框
+        JMenuBar menubar = new JMenuBar(); // 菜单栏
+        this.setJMenuBar(menubar); // 添加菜单栏
+        String menustr[] = &#123; &quot;文件&quot;, &quot;编辑&quot;, &quot;工具&quot;, &quot;帮助&quot; &#125;;
+        JMenu menu[] = new JMenu[menustr.length];
+        for (int i = 0; i &lt; menustr.length; i++) &#123;
+            menu[i] = new JMenu(menustr[i]); // 菜单
+            menubar.add(menu[i]); // 菜单栏中加入菜单
+        &#125;
+        ////////////////////////////////
+        JMenuItem menuitem_open = new JMenuItem(&quot;打开&quot;);
+        menu[0].add(menuitem_open);
+        menuitem_open.addActionListener(new ActionListener() &#123;
+            public void actionPerformed(ActionEvent e) &#123;
+                JFileChooser filechooser = new JFileChooser();
+                int result = filechooser.showOpenDialog(Test.this);
+                if (result == JFileChooser.APPROVE_OPTION) &#123;
+                    try &#123;
+                        File file = filechooser.getSelectedFile();
+                        FileReader fr = new FileReader(file);
+                        BufferedReader br = new BufferedReader(fr);
+                        ta.setText(&quot;&quot;);
+                        String text;
+                        while ((text = br.readLine()) != null) &#123;
+                            ta.append(text);
+                        &#125;
+                        fr.close();
+                        br.close();
+                    &#125; catch (Exception ex) &#123;
+                        JOptionPane.showMessageDialog(Test.this,&quot;打开文档出错！&quot;);
+                    &#125;
+                &#125;
+            &#125;
+        &#125;);
+        JMenuItem menuitem_save = new JMenuItem(&quot;保存&quot;);
+        menu[0].add(menuitem_save);
+        menuitem_save.addActionListener(new ActionListener() &#123;
+            public void actionPerformed(ActionEvent e) &#123;
+                JFileChooser filechooser = new JFileChooser();
+                int result = filechooser.showSaveDialog(Test.this);
+                if (result == JFileChooser.APPROVE_OPTION) &#123;
+                    try &#123;
+                        File file = filechooser.getSelectedFile();
+                        FileWriter fw = new FileWriter(file);
+                        BufferedWriter bw = new BufferedWriter(fw);
+                        String text=ta.getText();
+                        fw.write(text);
+                        fw.close();
+                        bw.close();
+                    &#125; catch (Exception ex) &#123;
+                        JOptionPane.showMessageDialog(Test.this,&quot;打开文档出错！&quot;);
+                    &#125;
+                &#125;
+            &#125;
+        &#125;);
+        menu[0].addSeparator(); // 加分隔线
+        JMenuItem menuitem_exit = new JMenuItem(&quot;退出&quot;);
+        menu[0].add(menuitem_exit);
+        menuitem_exit.addActionListener(new ActionListener() &#123;// 退出
+                    public void actionPerformed(ActionEvent e) &#123;
+                        System.exit(0);
+                    &#125;
+                &#125;);
+        /////////////////////////////
+        JMenu menu_style = new JMenu(&quot;字形&quot;);
+        JCheckBoxMenuItem checkboxmenuitem_bold = new JCheckBoxMenuItem(&quot;粗体&quot;);
+        menu_style.add(checkboxmenuitem_bold);
+        JCheckBoxMenuItem checkboxmenuitem_italic = new JCheckBoxMenuItem(&quot;斜体&quot;);
+        menu_style.add(checkboxmenuitem_italic);
+        menu[1].add(menu_style); // 菜单加入到菜单中成为二级菜单
+        checkboxmenuitem_bold.addActionListener(new ActionListener() &#123;
+            public void actionPerformed(ActionEvent e) &#123;
+                String fontname = (String)combox_name.getSelectedItem();//获得字体名
+                Font font = ta.getFont();     //获得文本区的当前字体对象
+                int style = font.getStyle();      //获得字形
+                int size = font.getSize();
+                style = style ^ 1;
+                ta.setFont(new Font(fontname, style, size));
+            &#125;
+        &#125;);
+        checkboxmenuitem_italic.addActionListener(new ActionListener() &#123;
+            public void actionPerformed(ActionEvent e) &#123;
+                String fontname = (String)combox_name.getSelectedItem();//获得字体名
+                Font font = ta.getFont();     //获得文本区的当前字体对象
+                int style = font.getStyle();      //获得字形
+                int size = font.getSize();
+                style = style ^ 2;
+                ta.setFont(new Font(fontname, style, size));
+            &#125;
+        &#125;);
+        ////////////////////////////
+        JMenu menu_color = new JMenu(&quot;颜色&quot;);
+        menu[1].add(menu_color);
+        ButtonGroup buttongroup = new ButtonGroup();
+        String colorstr[] = &#123; &quot;红&quot;, &quot;绿&quot;, &quot;蓝&quot; &#125;;
+        JRadioButtonMenuItem rbmi_color[] = new JRadioButtonMenuItem[colorstr.length];
+        for (int i = 0; i &lt; rbmi_color.length; i++) &#123;
+            rbmi_color[i] = new JRadioButtonMenuItem(colorstr[i]); // 单选菜单项
+            buttongroup.add(rbmi_color[i]);
+            menu_color.add(rbmi_color[i]);
+        &#125;
+        rbmi_color[0].addActionListener(new ActionListener() &#123;
+            public void actionPerformed(ActionEvent e) &#123;
+                ta.setForeground(Color.red);
+            &#125;
+        &#125;);
+        rbmi_color[1].addActionListener(new ActionListener() &#123;
+            public void actionPerformed(ActionEvent e) &#123;
+                ta.setForeground(Color.green);
+            &#125;
+        &#125;);
+        rbmi_color[2].addActionListener(new ActionListener() &#123;
+            public void actionPerformed(ActionEvent e) &#123;
+                ta.setForeground(Color.blue);
+            &#125;
+        &#125;);
+        /////////////////////////////////
+        JMenuItem menuitem_countwordsnum = new JMenuItem(&quot;字数统计&quot;);
+        menu[2].add(menuitem_countwordsnum);
+        menuitem_countwordsnum.addActionListener(new ActionListener() &#123;
+            public void actionPerformed(ActionEvent e) &#123;
+                int count=0;
+                for(int i=0;i&lt;ta.getText().length();i++)&#123;
+                    if(!ta.getText().substring(i,i+1).equals(&quot; &quot;))&#123;
+                        count++;
+                    &#125;
+                &#125;
+                JOptionPane.showMessageDialog(Test.this, &quot;文本框中一共有&quot;+count+&quot;个字符！&quot;);
+            &#125;
+        &#125;);
+        menu[2].addSeparator(); // 加分隔线
+        JMenuItem menuitem_search = new JMenuItem(&quot;查找&quot;);
+        menu[2].add(menuitem_search);
+        menuitem_search.addActionListener(new ActionListener() &#123;
+            public void actionPerformed(ActionEvent e) &#123;
+                new MessageJDialog();
+                button_next.addActionListener(new ActionListener() &#123;
+                    public void actionPerformed(ActionEvent e) &#123;
+                        String str_search=tf_search.getText();
+                        int len = str_search.length();
+                        for (int i = key; i &lt; ta.getText().length() - len + 1; i++) &#123;
+                            String str_record = ta.getText().substring(i, i + len);
+                            if (str_record.equals(str_search)) &#123;
+                                key = i + 1;
+                                ta.requestFocus();
+                                ta.select(i, i + len);
+                                return;
+                            &#125;
+                        &#125;
+                    &#125;
+                &#125;);
+                key=0;
+            &#125;
+        &#125;);
+        JMenuItem menuitem_replace = new JMenuItem(&quot;替换&quot;);
+        menu[2].add(menuitem_replace);
+        menuitem_replace.addActionListener(new ActionListener() &#123;
+            public void actionPerformed(ActionEvent e) &#123;
+                String str_replace=JOptionPane.showInputDialog(Test.this,
+                        &quot;请输入你要替换的字符串:&quot; );
+                String str_replacelater=JOptionPane.showInputDialog(Test.this,
+                        &quot;请输入你要用来替换的内容:&quot; );
+                int len=str_replace.length();
+                for(int i=0;i&lt;ta.getText().length()-len+1;i++)&#123;
+                    String str_record=ta.getText().substring(i, i+len);
+                    if(str_record.equals(str_replace))&#123;
+                        ta.replaceRange(str_replacelater,i, i+len);
+                    &#125;
+                &#125;
+            &#125;
+        &#125;);
+        /////////////////////////////////
+        JMenuItem menuitem_about = new JMenuItem(&quot;关于&quot;);
+        menu[3].add(menuitem_about);
+        menuitem_about.addActionListener(new ActionListener() &#123;
+            public void actionPerformed(ActionEvent e) &#123;
+                JOptionPane.showMessageDialog(Test.this,&quot;文本编辑器v1.0   开发者：Mi&quot;);
+            &#125;
+        &#125;);
+        ////////////////////////////////////////////////// 快捷菜单对象
+        popupmenu = new JPopupMenu();
+        String menuitemstr[] = &#123; &quot;剪切&quot;, &quot;复制&quot;, &quot;粘贴&quot; &#125;;
+        JMenuItem popmenuitem[] = new JMenuItem[menuitemstr.length];
+        for (int i = 0; i &lt; popmenuitem.length; i++) &#123;
+            popmenuitem[i] = new JMenuItem(menuitemstr[i]);// 菜单项
+            popupmenu.add(popmenuitem[i]);// 快捷菜单加入菜单项
+        &#125;
+        popmenuitem[0].setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_X,
+                InputEvent.CTRL_MASK));// 设置快捷键Ctrl+X
+        popmenuitem[1].setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_C,
+                InputEvent.CTRL_MASK));// 设置快捷键Ctrl+C
+        popmenuitem[2].setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_V,
+                InputEvent.CTRL_MASK));// 设置快捷键Ctrl+V
+        popmenuitem[0].addActionListener(new ActionListener() &#123;
+            public void actionPerformed(ActionEvent e) &#123;
+                ta.cut(); //将选中文本剪切送系统剪贴板
+            &#125;
+        &#125;);
+        popmenuitem[1].addActionListener(new ActionListener() &#123;
+            public void actionPerformed(ActionEvent e) &#123;
+                ta.copy(); //将选中文本复制送系统剪贴板
+            &#125;
+        &#125;);
+        popmenuitem[2].addActionListener(new ActionListener() &#123;
+            public void actionPerformed(ActionEvent e) &#123;
+                ta.paste();//剪贴板的文本粘贴在当前位置
+            &#125;
+        &#125;);
+        ta.add(popupmenu); // 文本区添加快捷菜单
+    &#125;
+    //
+    private class MessageJDialog extends JDialog &#123;
+        private JLabel lable_tip;
+        private JPanel panel_next = new JPanel();
+        private JPanel panel_search = new JPanel();
+        private JPanel panel_tip = new JPanel();
+        public MessageJDialog() &#123;
+            super(Test.this, &quot;查找&quot;);
+            this.setSize(300, 170);
+            this.setLocation(Test.this.getX() + 200,
+                    Test.this.getY() + 200);
+            this.setLayout(new GridLayout(3, 1));
+            //
+            ImageIcon imageIcon = new ImageIcon(&quot;img/search.png&quot;);
+            lable_tip = new JLabel(&quot;请输入你要查找的字符串：&quot;, imageIcon, JLabel.LEFT);
+            panel_tip.add(lable_tip);
+            this.add(panel_tip);
+            tf_search = new JTextField(20);
+            panel_search.add(tf_search);
+            this.add(panel_search);
+            button_next = new JButton(&quot;查找下一个&quot;);
+            panel_next.add(button_next);
+            this.add(panel_next);
+            this.setVisible(true);
+        &#125;
+    &#125;
+    public static void main(String args[]) &#123;
+        new Test(&quot;文本编辑器v1.0&quot;);
+    &#125;
+&#125;
+</code></pre>
+<p>第二个截图：</p>
+<p><a target="_blank" rel="noopener" href="http://notemi.cn/usr/uploads/2015/06/3946694450.png"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="http://notemi.cn/usr/uploads/2015/06/3946694450.png" alt="JAVA - 简单记事本"></a></p>
+<p>这个就写得乱点，第一次写的，功能和上个差不多，但一些功能的实现方法就不一样了，发出来大家学习下。<br>代码如下：</p>
+<pre><code>import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.GraphicsEnvironment;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.InputEvent;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import javax.swing.JColorChooser;
+import javax.swing.JComboBox;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JPopupMenu;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JToolBar;
+import javax.swing.KeyStroke;
+import javax.swing.filechooser.FileFilter;
+import javax.swing.plaf.FontUIResource;
+public final class NotePad implements ActionListener &#123;
+    private JFrame frame;
+    private JPanel panel;
+    private JTextArea textArea;//文本区
+    private JScrollPane scrollPane;
+    /*菜单*/
+    private JMenuBar menuBar;
+    private JMenu menuFile,menuOption,menuHelp,menuColor;
+    private JMenuItem miFileOpen,miFileSave,miFileExit,miHelpAbout,miColorForeground,miColorBackground,miPopCopy,miPopPaste;
+    //private JToolBar toolBar;
+    /*字体背景*/
+    private JLabel lblFontFamily,lblFontsize;
+    private JComboBox cBoxFontFamily,cBoxFontSize;
+    private Color bColor,fColor;
+    private Font font;
+    private JPopupMenu popupMenu;
+    public NotePad() &#123;
+        frame = new JFrame(&quot;记事本&quot;);
+        panel = new JPanel(new BorderLayout());
+        textArea = new JTextArea(20,10);
+        scrollPane = new JScrollPane(textArea,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        textArea.setLineWrap(true);//输入框中文本自动换行
+        //初始字体
+        font = new Font(&quot;宋体&quot;,Font.BOLD,20);
+        textArea.setFont(font);
+        //右键弹出菜单
+        popupMenu = new JPopupMenu();
+        miPopCopy = new JMenuItem(&quot;复制&quot;);
+        miPopPaste = new JMenuItem(&quot;粘贴&quot;);
+        popupMenu.add(miPopCopy);
+        popupMenu.add(miPopPaste);
+        //文本区textArea-&gt;scrollPanel-&gt;panel
+        //scrollPane.add(textArea);
+        panel.add(scrollPane,BorderLayout.CENTER);
+        //frame.add(Panel,BorderLayout.CENTER);
+        /*菜单实例化*/
+        menuBar = new JMenuBar();
+        menuFile = new JMenu(&quot;File&quot;);
+        miFileOpen = new JMenuItem(&quot;Open&quot;);
+        miFileSave = new JMenuItem(&quot;Save&quot;);
+        miFileExit = new JMenuItem(&quot;Exit&quot;);
+        menuOption = new JMenu(&quot;Option&quot;);
+        menuColor = new JMenu(&quot;Color&quot;);
+        miColorForeground = new JMenuItem(&quot;Foreground&quot;);
+        miColorBackground = new JMenuItem(&quot;Background&quot;);
+        menuHelp = new JMenu(&quot;Help&quot;);
+        miHelpAbout = new JMenuItem(&quot;About&quot;);
+        /*工具栏*/
+        JToolBar jToolBar = new JToolBar(JToolBar.HORIZONTAL);//创建工具栏，横向排列   orientation 排列方式
+        jToolBar.setFloatable(true);//工具栏可以拖动
+        /*字体样式方法*/
+        lblFontFamily = new JLabel(&quot;字体&quot;);
+        lblFontsize = new JLabel(&quot;字号&quot;);
+        String []items;
+        GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+        items = ge.getAvailableFontFamilyNames();
+        cBoxFontFamily = new JComboBox(items);
+        cBoxFontFamily.addActionListener(new ActionListener() &#123;
+            public void actionPerformed(ActionEvent e) &#123;
+            &#125;
+        &#125;);
+        /*字体大小*/
+        String []items2 = &#123;&quot;5&quot;,&quot;10&quot;,&quot;20&quot;, &quot;30&quot;, &quot;40&quot;, &quot;50&quot;, &quot;60&quot;, &quot;70&quot; ,&quot;80&quot;,&quot;90&quot;,&quot;100&quot;&#125;;
+        cBoxFontSize = new JComboBox(items2);
+        cBoxFontFamily.setPreferredSize(new Dimension(20,30));//Cbox框大小调整
+        cBoxFontSize.setPreferredSize(new Dimension(20,30));
+        jToolBar.add(lblFontFamily);
+        jToolBar.add(cBoxFontFamily);
+        jToolBar.add(lblFontsize);
+        jToolBar.add(cBoxFontSize);
+        panel.add(jToolBar,BorderLayout.NORTH);
+        /*菜单栏Open*/
+        menuBar.add(menuFile);
+        menuFile.add(miFileOpen);
+        menuFile.addSeparator();
+        menuFile.add(miFileSave);
+        menuFile.addSeparator();
+        menuFile.add(miFileExit);
+        /*菜单栏Option*/
+        menuBar.add(menuOption);
+        menuOption.add(menuColor);
+        menuColor.add(miColorForeground);
+        menuColor.add(miColorBackground);
+        /*菜单栏Help*/
+        menuBar.add(menuHelp);
+        menuHelp.add(miHelpAbout);
+        /*组合键和快捷键*/
+        menuFile.setMnemonic(KeyEvent.VK_F);//快捷键
+        menuOption.setMnemonic(KeyEvent.VK_O);
+        miFileOpen.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_O, InputEvent.CTRL_MASK));//组合键
+        miFileSave.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, ActionEvent.CTRL_MASK));
+        menuHelp.setMnemonic(KeyEvent.VK_H);
+        /*添加监听器*/
+        miHelpAbout.addActionListener(this);
+        miColorBackground.addActionListener(this);
+        miColorForeground.addActionListener(this);
+        miFileOpen.addActionListener(this);
+        miFileSave.addActionListener(this);
+        miFileExit.addActionListener(this);
+        miPopCopy.addActionListener(this);
+        miPopPaste.addActionListener(this);
+        cBoxFontFamily.addItemListener(itemListener);
+        cBoxFontSize.addItemListener(itemListener);
+        //事件处理方式3   ：事件适配器Adapter
+        textArea.addMouseListener(new MouseAdapter() &#123;
+            public void mouseReleased(MouseEvent e) &#123;
+                super.mouseReleased(e);
+                if (e.isPopupTrigger()) // 单击的是鼠标右键
+                    popupMenu.show(e.getComponent(), e.getX(), e.getY()); // 在鼠标单击处显示快捷菜单
+            &#125;
+        &#125;);
+        frame.setJMenuBar(menuBar);
+        frame.setVisible(true);
+        frame.setSize(600,400);
+        frame.setContentPane(panel);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    &#125;
+    //处理事件方式2
+    private ItemListener itemListener = new ItemListener() &#123;
+        public void itemStateChanged(ItemEvent e) &#123;
+            //字体
+            if (e.getSource().equals(cBoxFontFamily)) &#123;
+                font = new Font(e.getItem().toString(), font.getStyle(),font.getSize());
+                textArea.setFont(font);
+            &#125;
+            //字号
+            if (e.getSource().equals(cBoxFontSize)) &#123;
+                //System.out.println(e.getItem());
+                font = new FontUIResource(font.getFamily(), font.getStyle(), Integer.parseInt(e.getItem().toString()));
+                textArea.setFont(font);
+            &#125;
+        &#125;
+    &#125;;
+    public void actionPerformed(ActionEvent e) &#123;
+        //判断事件源
+        //帮助
+        if (e.getSource().equals(miHelpAbout)) &#123;
+            JOptionPane.showMessageDialog(frame, &quot;2015.6.8&quot;);
+        &#125;
+        //背景色
+        if (e.getSource().equals(miColorBackground)) &#123;
+            bColor = JColorChooser.showDialog(frame, &quot;背景色&quot;, Color.BLUE);
+            textArea.setBackground(bColor);
+        &#125;
+        //前景色
+        if (e.getSource().equals(miColorForeground)) &#123;
+            fColor = JColorChooser.showDialog(frame, &quot;前景色&quot;, Color.BLACK);
+            textArea.setForeground(fColor);
+        &#125;
+        //打开    JFileChooser
+        //Fileter：过滤器       FileFilter:文件过滤器
+        if (e.getSource().equals(miFileOpen)) &#123;
+            JFileChooser filechooser = new JFileChooser(&quot;C:\\Users\\Administrator\\Desktop&quot;);
+            FileFilter filter = new MyFileFilter();
+            filechooser.setFileFilter(filter);
+            int result = filechooser.showOpenDialog(frame);
+            if (result == JFileChooser.APPROVE_OPTION) &#123;
+                try &#123;
+                    File file = filechooser.getSelectedFile();
+                    FileReader fr = new FileReader(file);
+                    BufferedReader br = new BufferedReader(fr);
+                    textArea.setText(&quot;&quot;);
+                    String text;
+                    while ((text = br.readLine()) != null) &#123;
+                        textArea.append(text);
+                    &#125;
+                    fr.close();
+                    br.close();
+                &#125; catch (Exception ex) &#123;
+                    JOptionPane.showMessageDialog(frame,&quot;打开文档出错！&quot;);
+                &#125;
+            &#125;
+        &#125;
+        //保存
+        if (e.getSource().equals(miFileSave)) &#123;
+            JFileChooser filechooser = new JFileChooser(&quot;C:\\Users\\Administrator\\Desktop&quot;);
+            FileFilter filter = new MyFileFilter();
+            filechooser.setFileFilter(filter);
+            int result = filechooser.showSaveDialog(frame);
+            if (result == JFileChooser.APPROVE_OPTION) &#123;
+                try &#123;
+                    File file = filechooser.getSelectedFile();
+                    FileWriter fw = new FileWriter(file);
+                    BufferedWriter bw = new BufferedWriter(fw);
+                    String text=textArea.getText();
+                    fw.write(text);
+                    fw.close();
+                    bw.close();
+                &#125; catch (Exception ex) &#123;
+                    JOptionPane.showMessageDialog(frame,&quot;保存文档出错！&quot;);
+                &#125;
+            &#125;
+        &#125;
+        //退出
+        if (e.getSource().equals(miFileExit)) &#123;
+            System.exit(0);
+        &#125;
+        //复制
+        if (e.getSource().equals(miPopCopy)) &#123;
+            textArea.copy();
+        &#125;
+        //粘贴
+        if (e.getSource().equals(miPopPaste)) &#123;
+            textArea.paste();
+        &#125;
+    &#125;
+    public static void main(String[] args) &#123;
+        new NotePad();
+    &#125;
+&#125;
+class MyFileFilter extends FileFilter&#123;
+    //定义过滤器 过滤.txt
+    public boolean israr(File file)&#123;
+        return file.getName().endsWith(&quot;.rar&quot;);
+    &#125;
+    public boolean istxt(File file)&#123;
+        return file.getName().endsWith(&quot;.txt&quot;);
+    &#125;
+    public boolean isyinpin(File file)&#123;
+        return file.getName().endsWith(&quot;.mp3&quot;)
+                ||file.getName().endsWith(&quot;.midi&quot;)
+                ||file.getName().endsWith(&quot;.wav&quot;);
+    &#125;
+    public boolean accept(File f) &#123;
+        // TODO Auto-generated method stub
+        return israr(f)||istxt(f)||isyinpin(f);
+    &#125;
+    /*
+    public boolean accept(File f) &#123;
+        // TODO Auto-generated method stub
+        return f.getName().toLowerCase().endsWith(&quot;.txt&quot;)
+                ||f.getName().toLowerCase().endsWith(&quot;.mp3&quot;)
+                ||f.getName().toLowerCase().endsWith(&quot;.midi&quot;)
+                ||f.getName().toLowerCase().endsWith(&quot;.wav&quot;);//过滤文件名.TXT.txt结尾
+    &#125;
+    */
+    //过滤器的描述
+    public String getDescription() &#123;
+        // TODO Auto-generated method stub
+        return &quot;.txt,.mp3,.midi,.wav&quot;;
+    &#125;
+    public String getDescription2() &#123;
+        // TODO Auto-generated method stub
+        return &quot;.txt,.mp3,.midi,.wav&quot;;
+    &#125;
+&#125;
+</code></pre>
+<p><a target="_blank" rel="noopener" href="https://notemi.cn/java-2.html">JAVA - 简单记事本 - 小米笔记 - 坏记性不如烂笔头 (notemi.cn)</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">谢安</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2023/09/07/JAVA-%E7%AE%80%E5%8D%95%E8%AE%B0%E4%BA%8B%E6%9C%AC/">http://example.com/2023/09/07/JAVA-%E7%AE%80%E5%8D%95%E8%AE%B0%E4%BA%8B%E6%9C%AC/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">谢安の博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/JAVA/">JAVA</a></div><div class="post_share"><div class="social-share" data-image="https://img-blog.csdnimg.cn/2019121810082198.png?x-oss-process&amp;#61;image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly90aGlua3dvbi5ibG9nLmNzZG4ubmV0,size_16,color_FFFFFF,t_70" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="/img/wechat.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="/img/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2023/09/07/windows%E4%B8%8B%E4%BF%AE%E6%94%B9MySQL%E5%AF%86%E7%A0%81%E7%9A%84%E6%96%B9%E6%B3%95/" title="windows下修改MySQL密码的方法"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="https://img-blog.csdnimg.cn/0ed69a2ac58a47318914e77dd267a99f.png?x-oss-process=image/resize,m_fixed,h_150" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">windows下修改MySQL密码的方法</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="comment-switch"><span class="first-comment">Valine</span><span class="switch-btn"></span><span class="second-comment">Disqus</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div><div><div id="disqus_thread"></div></div><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">谢安</div><div class="author-info__description">让子弹飞一会儿</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">62</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">28</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">29</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://haiyong.site/moyu/"><i class="iconfont icon-youxishoubing"></i><span>摸鱼</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content"><p align="center">微信号：O99776161</p> <p align="center">QQ号：3114921075</p></div></div><div class="card-widget" id="newYear"><div class="item-headline"><i></i><span></span></div><div class="item-content"><div id="newYear-main"><div class="mask"></div> <p class="title"></p> <div class="newYear-time"></div> <p class="today" style="text-align: right;"></p> </div></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/09/07/JAVA-%E7%AE%80%E5%8D%95%E8%AE%B0%E4%BA%8B%E6%9C%AC/" title="JAVA - 简单记事本"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="https://img-blog.csdnimg.cn/2019121810082198.png?x-oss-process&amp;#61;image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly90aGlua3dvbi5ibG9nLmNzZG4ubmV0,size_16,color_FFFFFF,t_70" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JAVA - 简单记事本"/></a><div class="content"><a class="title" href="/2023/09/07/JAVA-%E7%AE%80%E5%8D%95%E8%AE%B0%E4%BA%8B%E6%9C%AC/" title="JAVA - 简单记事本">JAVA - 简单记事本</a><time datetime="2023-09-07T05:16:40.000Z" title="发表于 2023-09-07 13:16:40">2023-09-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/09/07/windows%E4%B8%8B%E4%BF%AE%E6%94%B9MySQL%E5%AF%86%E7%A0%81%E7%9A%84%E6%96%B9%E6%B3%95/" title="windows下修改MySQL密码的方法"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="https://img-blog.csdnimg.cn/0ed69a2ac58a47318914e77dd267a99f.png?x-oss-process=image/resize,m_fixed,h_150" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="windows下修改MySQL密码的方法"/></a><div class="content"><a class="title" href="/2023/09/07/windows%E4%B8%8B%E4%BF%AE%E6%94%B9MySQL%E5%AF%86%E7%A0%81%E7%9A%84%E6%96%B9%E6%B3%95/" title="windows下修改MySQL密码的方法">windows下修改MySQL密码的方法</a><time datetime="2023-09-07T04:56:42.000Z" title="发表于 2023-09-07 12:56:42">2023-09-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/09/06/%E7%86%AC%E5%A4%9C%E4%B8%8D%E4%BC%A4%E8%BA%AB/" title="熬夜不伤身"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="https://img-blog.csdnimg.cn/97460794069f46aca7af2f1b54d47055.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="熬夜不伤身"/></a><div class="content"><a class="title" href="/2023/09/06/%E7%86%AC%E5%A4%9C%E4%B8%8D%E4%BC%A4%E8%BA%AB/" title="熬夜不伤身">熬夜不伤身</a><time datetime="2023-09-06T10:18:43.000Z" title="发表于 2023-09-06 18:18:43">2023-09-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/09/06/%E7%8E%B0%E4%BB%A3%E5%86%9C%E6%B0%91%E4%BF%9D%E5%81%A5%E4%B8%9B%E4%B9%A6/" title="现代农民保健丛书"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="https://img-blog.csdnimg.cn/d73ea747569347b9a2816860d6ddcb8b.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="现代农民保健丛书"/></a><div class="content"><a class="title" href="/2023/09/06/%E7%8E%B0%E4%BB%A3%E5%86%9C%E6%B0%91%E4%BF%9D%E5%81%A5%E4%B8%9B%E4%B9%A6/" title="现代农民保健丛书">现代农民保健丛书</a><time datetime="2023-09-06T10:14:48.000Z" title="发表于 2023-09-06 18:14:48">2023-09-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/09/06/%E4%B8%AD%E5%8C%BB%E4%B8%AD%E8%8D%AF%E5%85%A5%E9%97%A8%E4%B8%80%E6%9C%AC%E9%80%9A/" title="中医中药入门一本通"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="https://img-blog.csdnimg.cn/a3b833d7844a42a3b5b93c10a8700c99.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="中医中药入门一本通"/></a><div class="content"><a class="title" href="/2023/09/06/%E4%B8%AD%E5%8C%BB%E4%B8%AD%E8%8D%AF%E5%85%A5%E9%97%A8%E4%B8%80%E6%9C%AC%E9%80%9A/" title="中医中药入门一本通">中医中药入门一本通</a><time datetime="2023-09-06T10:11:16.000Z" title="发表于 2023-09-06 18:11:16">2023-09-06</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://img-blog.csdnimg.cn/2019121810082198.png?x-oss-process&amp;#61;image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly90aGlua3dvbi5ibG9nLmNzZG4ubmV0,size_16,color_FFFFFF,t_70')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023  <i id="heartbeat" class="fa fas fa-heartbeat"></i> 谢安</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div><link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css"></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '',
+      appKey: '',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script>function loadDisqus () {
+  var disqus_config = function () {
+    this.page.url = 'http://example.com/2023/09/07/JAVA-%E7%AE%80%E5%8D%95%E8%AE%B0%E4%BA%8B%E6%9C%AC/'
+    this.page.identifier = '/2023/09/07/JAVA-%E7%AE%80%E5%8D%95%E8%AE%B0%E4%BA%8B%E6%9C%AC/'
+    this.page.title = 'JAVA - 简单记事本'
+  };
+
+  window.disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+
+  document.getElementById('darkmode').addEventListener('click', () => {
+    setTimeout(() => window.disqusReset(), 200)
+  })
+}
+
+if ('Valine' === 'Disqus' || !true) {
+  if (true) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script><script>function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk(Object.assign({
+      clientID: '1edcf51120d78d14fafb',
+      clientSecret: '2709738244ad1c73a3a9b17383995bc4fe983c89',
+      repo: 'pinglun',
+      owner: '',
+      admin: [''],
+      id: '6ed956313e0c6707d9e8325e921c97a3',
+      updateCountCallback: commentCount
+    },))
+
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    getCSS('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css')
+    getScript('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Valine' === 'Gitalk' || !true) {
+  if (true) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div><div class="aplayer no-destroy" data-id="4010201" data-server="netease" data-type="song" data-fixed="true" data-autoplay="true"> </div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+    function butterfly_categories_card_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<style>li.categoryBar-list-item{width:32.3%;}.categoryBar-list{max-height: 190px;overflow:auto;}.categoryBar-list::-webkit-scrollbar{width:0!important}@media screen and (max-width: 650px){.categoryBar-list{max-height: 160px;}}</style><div class="recent-post-item" style="height:auto;width:100%;padding:0px;"><div id="categoryBar"><ul class="categoryBar-list"><li class="categoryBar-list-item" style="background:url(https://assets.akilar.top/image/cover1.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/原理/&quot;);" href="javascript:void(0);">原理</a><span class="categoryBar-list-count">4</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://assets.akilar.top/image/cover2.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/hexo/&quot;);" href="javascript:void(0);">hexo</a><span class="categoryBar-list-count">3</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://assets.akilar.top/image/cover3.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/解决办法/&quot;);" href="javascript:void(0);">解决办法</a><span class="categoryBar-list-count">14</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://assets.akilar.top/image/cover4.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/书籍/&quot;);" href="javascript:void(0);">书籍</a><span class="categoryBar-list-count">3</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://assets.akilar.top/image/cover5.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/美剧/&quot;);" href="javascript:void(0);">美剧</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://assets.akilar.top/image/cover6.webp);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/选购指南/&quot;);" href="javascript:void(0);">选购指南</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/MySQL/&quot;);" href="javascript:void(0);">MySQL</a><span class="categoryBar-list-count">4</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/软件/&quot;);" href="javascript:void(0);">软件</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/IDEA/&quot;);" href="javascript:void(0);">IDEA</a><span class="categoryBar-list-count">4</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Gitee/&quot;);" href="javascript:void(0);">Gitee</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/GitHub/&quot;);" href="javascript:void(0);">GitHub</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Vue/&quot;);" href="javascript:void(0);">Vue</a><span class="categoryBar-list-count">2</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/前端小游戏/&quot;);" href="javascript:void(0);">前端小游戏</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Java/&quot;);" href="javascript:void(0);">Java</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/计算机基础/&quot;);" href="javascript:void(0);">计算机基础</a><span class="categoryBar-list-count">6</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Apache/&quot;);" href="javascript:void(0);">Apache</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/随想录/&quot;);" href="javascript:void(0);">随想录</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/React/&quot;);" href="javascript:void(0);">React</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/JavaScript/&quot;);" href="javascript:void(0);">JavaScript</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Go/&quot;);" href="javascript:void(0);">Go</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Git/&quot;);" href="javascript:void(0);">Git</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Socket/&quot;);" href="javascript:void(0);">Socket</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/WebSocket/&quot;);" href="javascript:void(0);">WebSocket</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Spring/&quot;);" href="javascript:void(0);">Spring</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Docker/&quot;);" href="javascript:void(0);">Docker</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/熬夜不伤身/&quot;);" href="javascript:void(0);">熬夜不伤身</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/现代农民保健丛书/&quot;);" href="javascript:void(0);">现代农民保健丛书</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/中医中药入门一本通/&quot;);" href="javascript:void(0);">中医中药入门一本通</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/JAVA/&quot;);" href="javascript:void(0);">JAVA</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li></ul></div></div>';
+      console.log('已挂载butterfly_categories_card')
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      }
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    butterfly_categories_card_injector_config()
+    }
+  </script><script data-pjax>
+  function butterfly_clock_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="https://npm.elemecdn.com/hexo-butterfly-clock/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_injector_config();
+  }
+  </script><script src="https://pv.sohu.com/cityjson?ie=utf-8"></script><script data-pjax src="https://npm.elemecdn.com/hexo-butterfly-clock/lib/clock.min.js"></script><script data-pjax>
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/03/22/Hexo-butterfly添加樱花动态效果背景/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="https://ts1.cn.mm.bing.net/th/id/R-C.fad21c0f37493382d44104011a85c1d1?rik=LLDab1WYCxDY1g&amp;riu=http%3a%2f%2fimg.mm4000.com%2ffile%2f3%2f70%2f8c8237035e.jpg&amp;ehk=h1vclPHGSaz7IKF5deFEAWXE2RyqM2Ia0VwgcWc7p98%3d&amp;risl=&amp;pid=ImgRaw&amp;r=0" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-03-22</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/03/22/Hexo-butterfly添加樱花动态效果背景/&quot;);" href="javascript:void(0);" alt="">Hexo-butterfly添加樱花动态效果背景~</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/03/22/Hexo-butterfly添加樱花动态效果背景/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/03/19/我的第一篇文章/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="https://p6.qhimg.com/bdm/1024_768_85/t01910270b46673d777.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-03-19</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/03/19/我的第一篇文章/&quot;);" href="javascript:void(0);" alt="">Hexo搭建博客的底层原理</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/03/19/我的第一篇文章/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js"></script><script defer data-pjax src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper_init.js"></script><script data-pjax>
+  function butterfly_clock_anzhiyu_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="https://npm.elemecdn.com/hexo-butterfly-clock/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock_anzhiyu')
+    if(parent_div_git) {
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var qweather_key = 'b16a1fa0e63c46a4b8f28abfb06ae3fe';
+  var gaud_map_key = 'e2b04289e870b005374ee030148d64fd&s=rsv3';
+  var baidu_ak_key = 'undefined';
+  var flag = 0;
+  var clock_rectangle = '112.6534116,27.96920845';
+  var clock_default_rectangle_enable = 'false';
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  </script><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '2s');
+    arr[i].setAttribute('data-wow-delay', '1s');
+    arr[i].setAttribute('data-wow-offset', '100');
+    arr[i].setAttribute('data-wow-iteration', '2');
+  }</script><script async="async">var arr = document.getElementsByClassName('card-widget');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script></div><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow_init.js"></script><!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300,"hOffset":20,"vOffset":-20},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/"});</script>
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n||document.documentElement.clientHeight*n)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script></body></html>
