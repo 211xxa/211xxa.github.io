@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>windows下修改MySQL密码的方法</title>
+      <link href="/2023/09/07/windows%E4%B8%8B%E4%BF%AE%E6%94%B9MySQL%E5%AF%86%E7%A0%81%E7%9A%84%E6%96%B9%E6%B3%95/"/>
+      <url>/2023/09/07/windows%E4%B8%8B%E4%BF%AE%E6%94%B9MySQL%E5%AF%86%E7%A0%81%E7%9A%84%E6%96%B9%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<p>如果在Windows下忘记了MySQL的密码，可以这样做。</p><p>1.关闭正在运行的MySQL服务：</p><p>net stop mysql或在windows 任务管理器中结束 mysqld.exe进程或在管理工具里面的服务找到mysql服务，将其停止；</p><pre><code>C:\Users\Administrator&gt;net stop mysqlMySQL 服务正在停止.MySQL 服务已成功停止。</code></pre><p>2.打开命令行，转到mysql的bin目录下；</p><pre><code>C:\Users\Administrator&gt;cd C:\Program Files\MySQL\MySQL Server 5.5\binC:\Program Files\MySQL\MySQL Server 5.5\bin&gt;</code></pre><p>3.输入：<code>mysqld -nt --skip-grant-tables</code></p><p>然后回车，如果没有错误信息，就行了；</p><p>注：skip-grant-tables参数用了之后，就可以跳过登录校验;</p><pre><code>C:\Program Files\MySQL\MySQL Server 5.5\bin&gt;mysqld -nt --skip-grant-tables140317 13:23:11 [Warning] option &#39;new&#39;: boolean value &#39;t&#39; wasn&#39;t recognized. Set to OFF.</code></pre><p>4.再打开一个命令行（因为刚才那个DOS窗口已经不能动了），同样转到mysql的bin目录下；</p><p>5.直接输入 mysql 并回车，如果成功，将出现MySQL提示符 &gt;</p><pre><code>C:\Users\Administrator&gt;cd C:\Program Files\MySQL\MySQL Server 5.5\binC:\Program Files\MySQL\MySQL Server 5.5\bin&gt;mysqlWelcome to the MySQL monitor.  Commands end with ; or \g.Your MySQL connection id is 1Server version: 5.5.35 MySQL Community Server (GPL)Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved.Oracle is a registered trademark of Oracle Corporation and/or itsaffiliates. Other names may be trademarks of their respective owners.Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.mysql&gt;</code></pre><p>6.切换到mysql表</p><pre><code>mysql&gt;USE mysql;</code></pre><p>7.修改密码</p><pre><code>UPDATE user SET password=PASSWORD(&quot;123456&quot;) WHERE user=&quot;root&quot;;</code></pre><p><strong>mysql新版已经没有password字段了</strong>，所以新版代码：</p><pre><code>update mysql.user set authentication_string=password(&#39;123qwe&#39;) where user=&#39;root&#39; and Host = &#39;localhost&#39;;</code></pre><p>8.刷新权限，不要忘记了</p><pre><code>mysql&gt;FLUSH PRIVILEGES;</code></pre><p>9.退出：(退出的方法很多 有quit、exit、ctrl+c、\q 等等）;</p><p>10.注销或重启计算机，然后打开MySQL服务，使用用户名root和设置的新密码就可以登录了。</p><h2 id="更改mysql密码常用的三种方法"><a href="#更改mysql密码常用的三种方法" class="headerlink" title="更改mysql密码常用的三种方法"></a>更改mysql密码常用的三种方法</h2><p>大部分情况下，一般用户没有权限更改密码，只有申请了权限或root用户才可以更改密码；</p><p>1.方法1：用mysqladmin</p><pre><code>mysqladmin -u root password &quot;123456&quot;;</code></pre><p>如果root已经设置过密码，采用如下方法</p><pre><code>mysqladmin -u root password -p &quot;123456&quot;;</code></pre><p>2.方法2： 用SET PASSWORD命令，不需要使用FLUSH PRIVILEGES;</p><pre><code>mysql -u root -p mysql&gt; SET PASSWORD FOR &#39;root&#39;@&#39;localhost&#39; = PASSWORD(&#39;123456&#39;);</code></pre><p>3.方法3： 用UPDATE直接编辑user表</p><pre><code>mysql&gt; USE mysql; mysql&gt; UPDATE user SET Password = PASSWORD(&#39;123456&#39;) WHERE user=&#39;root&#39;;</code></pre><p>or</p><pre><code>update mysql.user set authentication_string=password(&#39;123qwe&#39;) where user=&#39;root&#39; and Host = &#39;localhost&#39;;</code></pre><p><a href="https://notemi.cn/method-for-modifying-mysql-code-under-windows.html">Windows下忘记MySQL密码的修改方法 - 小米笔记 - 坏记性不如烂笔头 (notemi.cn)</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> MySQL </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MySQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>熬夜不伤身</title>
       <link href="/2023/09/06/%E7%86%AC%E5%A4%9C%E4%B8%8D%E4%BC%A4%E8%BA%AB/"/>
       <url>/2023/09/06/%E7%86%AC%E5%A4%9C%E4%B8%8D%E4%BC%A4%E8%BA%AB/</url>
